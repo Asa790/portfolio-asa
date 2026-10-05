@@ -1112,15 +1112,35 @@ export default function App() {
                               <div style={{
                                 position: 'absolute',
                                 inset: 0,
-                                background: 'linear-gradient(to top, rgba(10, 3, 5, 0.9) 0%, transparent 60%)',
+                                background: 'linear-gradient(to top, rgba(10, 3, 5, 0.92) 0%, transparent 60%)',
                                 display: 'flex',
                                 alignItems: 'flex-end',
-                                padding: '10px',
-                                pointerEvents: 'none'
+                                justifyContent: 'space-between',
+                                padding: '10px 12px'
                               }}>
-                                <span style={{ fontSize: '0.74rem', color: '#fff', lineHeight: '1.2' }}>
+                                <span style={{ fontSize: '0.74rem', color: '#fff', lineHeight: '1.2', pointerEvents: 'none' }}>
                                   {photo.caption || "Documentation • Click to enlarge"}
                                 </span>
+                                {photo.link && (
+                                  <a 
+                                    href={photo.link}
+                                    target="_blank"
+                                    rel="noreferrer"
+                                    onClick={(e) => e.stopPropagation()}
+                                    className="glass-pill"
+                                    style={{
+                                      fontSize: '0.68rem',
+                                      padding: '4px 10px',
+                                      borderColor: 'var(--crimson-accent)',
+                                      color: '#fff',
+                                      textDecoration: 'none',
+                                      background: 'rgba(230, 57, 86, 0.45)',
+                                      flexShrink: 0
+                                    }}
+                                  >
+                                    <ExternalLink size={11} color="#ffb3c1" /> Instagram Reel
+                                  </a>
+                                )}
                               </div>
                             </div>
                           ))}

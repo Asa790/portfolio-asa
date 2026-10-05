@@ -272,7 +272,9 @@ export const portfolioData = {
         },
         {
           url: "/editing-himeet-recap.png",
-          caption: "HiMeet 2025 Recapped Vintage Typewriter Photo Collage Poster"
+          caption: "HiMeet 2025 Recapped Vintage Typewriter Photo Collage Poster",
+          link: "https://www.instagram.com/reel/DQTRO2kj1ml/?utm_source=ig_web_copy_link&stkn=MzRlODBiNWFlZA==",
+          linkLabel: "Watch HiMeet 2025 Reel"
         },
         {
           url: "/editing-minisoccer-banner.png",
