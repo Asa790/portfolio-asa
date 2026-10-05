@@ -349,6 +349,14 @@ export default function App() {
                 <a href="#projects" className="btn-crimson">
                   <FolderGit2 size={18} /> View Projects
                 </a>
+                <a 
+                  href="/Khalisa-Kasih-Redwina-Resume.pdf" 
+                  download="Khalisa-Kasih-Redwina-Resume.pdf" 
+                  className="btn-outline"
+                  style={{ borderColor: 'var(--crimson-accent)' }}
+                >
+                  <Download size={18} color="#e63956" /> Download CV
+                </a>
                 <a href={personal.linkedin} target="_blank" rel="noreferrer" className="btn-outline">
                   <LinkedinIcon size={18} color="#e63956" /> LinkedIn
                 </a>
