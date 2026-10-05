@@ -211,14 +211,6 @@ export default function App() {
             <a href="#skills" style={{ color: 'var(--text-muted)', textDecoration: 'none', fontSize: '0.9rem', fontWeight: 500, transition: 'color 0.2s' }} onMouseEnter={e => e.target.style.color = '#fff'} onMouseLeave={e => e.target.style.color = 'var(--text-muted)'}>Skills</a>
             <a href="#projects" style={{ color: 'var(--text-muted)', textDecoration: 'none', fontSize: '0.9rem', fontWeight: 500, transition: 'color 0.2s' }} onMouseEnter={e => e.target.style.color = '#fff'} onMouseLeave={e => e.target.style.color = 'var(--text-muted)'}>Projects</a>
             <a href="#experience" style={{ color: 'var(--text-muted)', textDecoration: 'none', fontSize: '0.9rem', fontWeight: 500, transition: 'color 0.2s' }} onMouseEnter={e => e.target.style.color = '#fff'} onMouseLeave={e => e.target.style.color = 'var(--text-muted)'}>Experience</a>
-            <a 
-              href="/Khalisa-Kasih-Redwina-Resume.pdf" 
-              download="Khalisa-Kasih-Redwina-Resume.pdf" 
-              className="glass-pill" 
-              style={{ padding: '7px 16px', fontSize: '0.82rem', borderColor: 'var(--crimson-accent)' }}
-            >
-              <Download size={14} color="#e63956" /> Download CV
-            </a>
             <a href="#contact" className="btn-crimson" style={{ padding: '8px 20px', fontSize: '0.85rem' }}>
               Connect
             </a>
