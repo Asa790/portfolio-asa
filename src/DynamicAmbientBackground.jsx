@@ -1,12 +1,5 @@
 import React, { useEffect, useRef } from 'react';
 
-/**
- * DynamicAmbientBackground
- * Features:
- * - Fluid, undulating aurora-like burgundy/crimson glow blobs that slowly morph and roam
- * - Smooth interactive cursor follow-glow (interactive radiant halo)
- * - Drifting stardust sparkles
- */
 export default function DynamicAmbientBackground() {
   const canvasRef = useRef(null);
 
@@ -26,7 +19,6 @@ export default function DynamicAmbientBackground() {
     };
     window.addEventListener('resize', handleResize);
 
-    // Smooth cursor interpolation for ambient follow glow
     const mouse = {
       x: width * 0.5,
       y: height * 0.3,
@@ -48,7 +40,6 @@ export default function DynamicAmbientBackground() {
     window.addEventListener('mousemove', handleMouseMove);
     window.addEventListener('mouseleave', handleMouseLeave);
 
-    // Glowing organic orbs that continuously float and pulse
     const glowBlobs = [
       {
         baseX: width * 0.25,
@@ -59,8 +50,8 @@ export default function DynamicAmbientBackground() {
         ampX: width * 0.2,
         ampY: height * 0.22,
         phase: 0,
-        colorStart: 'rgba(230, 57, 86, 0.28)', // crimson accent
-        colorMid: 'rgba(168, 28, 51, 0.16)',   // deep crimson
+        colorStart: 'rgba(230, 57, 86, 0.28)',
+        colorMid: 'rgba(168, 28, 51, 0.16)',
         colorEnd: 'rgba(10, 4, 5, 0)'
       },
       {
@@ -72,7 +63,7 @@ export default function DynamicAmbientBackground() {
         ampX: width * 0.25,
         ampY: height * 0.25,
         phase: Math.PI * 0.6,
-        colorStart: 'rgba(168, 28, 51, 0.32)', // rich burgundy glow
+        colorStart: 'rgba(168, 28, 51, 0.32)',
         colorMid: 'rgba(90, 12, 26, 0.2)',
         colorEnd: 'rgba(10, 4, 5, 0)'
       },
@@ -85,7 +76,7 @@ export default function DynamicAmbientBackground() {
         ampX: width * 0.28,
         ampY: height * 0.2,
         phase: Math.PI * 1.3,
-        colorStart: 'rgba(244, 194, 194, 0.16)', // rose gold highlight
+        colorStart: 'rgba(244, 194, 194, 0.16)',
         colorMid: 'rgba(128, 15, 47, 0.22)',
         colorEnd: 'rgba(10, 4, 5, 0)'
       },
@@ -104,7 +95,6 @@ export default function DynamicAmbientBackground() {
       }
     ];
 
-    // Drifting subtle embers / star sparkles
     const sparkles = Array.from({ length: 40 }, () => ({
       x: Math.random() * width,
       y: Math.random() * height,
@@ -122,11 +112,9 @@ export default function DynamicAmbientBackground() {
       t += 1;
       ctx.clearRect(0, 0, width, height);
 
-      // Smoothly ease cursor glow towards actual mouse position
       mouse.x += (mouse.targetX - mouse.x) * 0.05;
       mouse.y += (mouse.targetY - mouse.y) * 0.05;
 
-      // 1. Draw roving morphing ambient glow blobs
       ctx.save();
       ctx.globalCompositeOperation = 'screen';
 
@@ -146,7 +134,6 @@ export default function DynamicAmbientBackground() {
         ctx.fill();
       });
 
-      // 2. Interactive Cursor Moving Glow (Radial spotlight following user cursor)
       if (mouse.active || mouse.x > 0) {
         const cursorRadius = Math.min(width, height) * 0.35;
         const cursorGrad = ctx.createRadialGradient(mouse.x, mouse.y, 0, mouse.x, mouse.y, cursorRadius);
@@ -162,7 +149,6 @@ export default function DynamicAmbientBackground() {
 
       ctx.restore();
 
-      // 3. Gentle drifting sparkles
       ctx.save();
       sparkles.forEach((s, idx) => {
         s.y -= s.speedY;
@@ -206,7 +192,7 @@ export default function DynamicAmbientBackground() {
         zIndex: 0,
         width: '100vw',
         height: '100vh',
-        filter: 'blur(35px)', // gives liquid, organic moving light appearance
+        filter: 'blur(35px)',
         WebkitFilter: 'blur(35px)'
       }}
     />

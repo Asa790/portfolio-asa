@@ -46,7 +46,6 @@ const LinkedinIcon = ({ size = 20, color = "currentColor" }) => (
   </svg>
 );
 
-// Tech Brand Logos Map (CDN SVGs)
 const techLogos = {
   c: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg",
   python: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg",
@@ -129,7 +128,7 @@ export default function App() {
         setFormSubmitted(true);
         setFormData({ name: '', email: '', message: '' });
       } else {
-        // Fallback to mailto if API returns an issue
+
         const subject = encodeURIComponent(`Portfolio Inquiry from ${formData.name}`);
         const body = encodeURIComponent(
           `Halo Khalisa,\n\nNama: ${formData.name}\nEmail: ${formData.email}\n\nPesan:\n${formData.message}\n\n---\nDikirim via Portfolio Web`
@@ -138,7 +137,7 @@ export default function App() {
         setFormSubmitted(true);
       }
     } catch (err) {
-      // Offline / network fallback
+
       const subject = encodeURIComponent(`Portfolio Inquiry from ${formData.name}`);
       const body = encodeURIComponent(
         `Halo Khalisa,\n\nNama: ${formData.name}\nEmail: ${formData.email}\n\nPesan:\n${formData.message}\n\n---\nDikirim via Portfolio Web`
@@ -161,10 +160,8 @@ export default function App() {
   return (
     <div style={{ minHeight: '100vh', paddingBottom: '80px', position: 'relative' }}>
       
-      {/* Dynamic Ambient Background: Floating Luminous Orbs & Drifting Stardust */}
       <DynamicAmbientBackground />
 
-      {/* Navigation Header */}
       <header style={{
         position: 'sticky',
         top: 0,
@@ -227,7 +224,6 @@ export default function App() {
             </a>
           </nav>
 
-          {/* Mobile Menu Hamburger Button */}
           <button 
             className="mobile-menu-btn" 
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -237,7 +233,6 @@ export default function App() {
           </button>
         </div>
 
-        {/* Mobile Navigation Drawer */}
         {mobileMenuOpen && (
           <div style={{
             background: 'rgba(18, 5, 8, 0.98)',
@@ -296,12 +291,10 @@ export default function App() {
         )}
       </header>
 
-      {/* Hero Section inspired by editorial typography & magazine composition */}
       <section style={{ padding: '50px 0 60px', position: 'relative' }}>
         <div className="container">
           <div className="hero-grid">
             
-            {/* Left Hero Column */}
             <div>
               <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '20px' }}>
                 <span className="badge-glow">Portfolio 2026</span>
@@ -310,7 +303,6 @@ export default function App() {
                 </span>
               </div>
 
-              {/* High-impact Editorial Title */}
               <div style={{ position: 'relative', marginBottom: '24px' }}>
                 <h1 className="font-editorial" style={{ 
                   fontSize: 'clamp(2.6rem, 6vw, 4.8rem)', 
@@ -353,7 +345,6 @@ export default function App() {
                 {personal.bio}
               </p>
 
-              {/* Action Buttons */}
               <div className="hero-actions" style={{ display: 'flex', flexWrap: 'wrap', gap: '14px', alignItems: 'center', marginBottom: '36px' }}>
                 <a href="#projects" className="btn-crimson">
                   <FolderGit2 size={18} /> View Projects
@@ -367,7 +358,6 @@ export default function App() {
                 </button>
               </div>
 
-              {/* Quick Resume Highlights Cards - Justified */}
               <div className="stats-grid" style={{ 
                 borderTop: '1px solid rgba(244, 194, 194, 0.15)',
                 paddingTop: '24px',
@@ -384,7 +374,6 @@ export default function App() {
               </div>
             </div>
 
-            {/* Right Hero Column: Editorial Portrait / Identity Card */}
             <div style={{ position: 'relative' }}>
               <div className="glass-card" style={{ 
                 padding: '30px', 
@@ -394,7 +383,6 @@ export default function App() {
                 border: '1px solid rgba(230, 57, 86, 0.3)'
               }}>
                 
-                {/* Decorative Halftone / Glow overlay inside */}
                 <div style={{
                   position: 'absolute',
                   top: '-40px',
@@ -415,7 +403,6 @@ export default function App() {
                   <span className="font-editorial" style={{ fontSize: '1.2rem', color: 'var(--rose-gold)', fontStyle: 'italic' }}>BINUS University</span>
                 </div>
 
-                {/* Aesthetic Avatar Display with Crimson Halo */}
                 <div style={{
                   width: '100%',
                   aspectRatio: '1/1',
@@ -432,7 +419,7 @@ export default function App() {
                   padding: '20px',
                   textAlign: 'center'
                 }}>
-                  {/* Subtle radial glow */}
+                  
                   <div style={{
                     position: 'absolute',
                     width: '280px',
@@ -443,7 +430,6 @@ export default function App() {
                     opacity: 0.65
                   }} />
 
-                  {/* Prominent Profile Photo - Soft Square */}
                   <div style={{
                     position: 'relative',
                     width: '210px',
@@ -483,7 +469,6 @@ export default function App() {
                   </p>
                 </div>
 
-                {/* Quick Info Matrix */}
                 <div style={{ marginTop: '20px', display: 'flex', flexDirection: 'column', gap: '10px' }}>
                   <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.88rem', borderBottom: '1px solid rgba(244, 194, 194, 0.1)', paddingBottom: '8px' }}>
                     <span style={{ color: 'var(--text-muted)' }}>Campus</span>
@@ -502,7 +487,6 @@ export default function App() {
         </div>
       </section>
 
-      {/* Skills & Tech Stack Section */}
       <section id="skills" style={{ padding: '80px 0', position: 'relative' }}>
         <div className="container">
           
@@ -516,7 +500,6 @@ export default function App() {
             </p>
           </div>
 
-          {/* 1. Hard Skills Grid with Brand Logos */}
           <div style={{ marginBottom: '50px' }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '22px' }}>
               <div style={{ width: '32px', height: '32px', borderRadius: '8px', background: 'rgba(230, 57, 86, 0.2)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#ffb3c1' }}>
@@ -570,7 +553,6 @@ export default function App() {
             </div>
           </div>
 
-          {/* 2. Soft Skills Section (Languages, Leadership, Communication, Public Speaking) */}
           <div>
             <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '22px' }}>
               <div style={{ width: '32px', height: '32px', borderRadius: '8px', background: 'rgba(230, 57, 86, 0.2)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#ffb3c1' }}>
@@ -623,7 +605,6 @@ export default function App() {
         </div>
       </section>
 
-      {/* GitHub & Projects Section */}
       <section id="projects" style={{ padding: '80px 0', position: 'relative' }}>
         <div className="container">
           
@@ -638,7 +619,6 @@ export default function App() {
               </p>
             </div>
 
-            {/* Filter buttons */}
             <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap' }}>
               {['all', 'Machine Learning', 'Python', 'Streamlit', 'HCI'].map(category => (
                 <button
@@ -662,7 +642,6 @@ export default function App() {
             </div>
           </div>
 
-          {/* Project Showcase Grid */}
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))', gap: '24px' }}>
             {filteredProjects.map((proj) => (
               <div key={proj.id} className="glass-card" style={{ 
@@ -697,7 +676,6 @@ export default function App() {
                     {proj.title}
                   </h3>
 
-                  {/* Project Image Preview Gallery if available */}
                   {proj.images && proj.images.length > 0 && (
                     <div style={{ marginBottom: '20px' }}>
                       <div 
@@ -745,7 +723,6 @@ export default function App() {
                         </div>
                       </div>
 
-                      {/* Thumbnail switcher if more than 1 image */}
                       {proj.images.length > 1 && (
                         <div style={{ display: 'flex', gap: '8px', marginTop: '10px' }}>
                           {proj.images.map((img, i) => (
@@ -782,7 +759,6 @@ export default function App() {
                     {proj.description}
                   </p>
 
-                  {/* Highlights list */}
                   <div style={{ marginBottom: '24px' }}>
                     <div style={{ fontSize: '0.78rem', textTransform: 'uppercase', color: 'var(--rose-gold)', marginBottom: '8px', opacity: 0.8 }}>
                       Key Features:
@@ -826,7 +802,6 @@ export default function App() {
             ))}
           </div>
 
-          {/* GitHub CTA banner */}
           <div className="glass-card" style={{ 
             marginTop: '36px', 
             padding: '28px 36px', 
@@ -853,7 +828,6 @@ export default function App() {
         </div>
       </section>
 
-      {/* Experience & Leadership Section directly derived from user resume */}
       <section id="experience" style={{ padding: '80px 0', position: 'relative' }}>
         <div className="container">
           
@@ -866,7 +840,6 @@ export default function App() {
               Demonstrated responsibility across HIMTI BINUS University Bekasi in HR, project direction, media design, and talent management.
             </p>
 
-            {/* Filter pills */}
             <div style={{ display: 'flex', justifyContent: 'center', gap: '8px', flexWrap: 'wrap', marginTop: '24px' }}>
               {['all', 'Leadership', 'Project Management', 'Recruitment', 'Multimedia'].map(f => (
                 <button
@@ -888,7 +861,6 @@ export default function App() {
             </div>
           </div>
 
-          {/* Timeline style stream */}
           <div style={{ display: 'flex', flexDirection: 'column', gap: '20px', maxWidth: '900px', margin: '0 auto' }}>
             {filteredExp.map((exp, idx) => (
               <div key={idx} className="glass-card" style={{ padding: '28px', borderLeft: '4px solid var(--crimson-accent)' }}>
@@ -924,7 +896,6 @@ export default function App() {
                   ))}
                 </ul>
 
-                {/* Documentation / Certificate Media Slot */}
                 {((exp.photos && exp.photos.length > 0) || (exp.certificates && exp.certificates.length > 0)) && (
                   <div style={{
                     marginTop: '20px',
@@ -939,7 +910,7 @@ export default function App() {
                     </div>
                     
                     <div style={{ display: 'flex', flexDirection: 'column', gap: '14px' }}>
-                      {/* Prominent Visible Certificates */}
+                      
                       {exp.certificates && exp.certificates.map((cert, cIdx) => (
                         <div 
                           key={cIdx}
@@ -965,7 +936,7 @@ export default function App() {
                             e.currentTarget.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.5)';
                           }}
                         >
-                          {/* Visible Certificate Preview Thumbnail */}
+                          
                           <div style={{
                             width: '120px',
                             height: '85px',
@@ -998,7 +969,6 @@ export default function App() {
                             </div>
                           </div>
 
-                          {/* Certificate Details */}
                           <div style={{ flex: 1 }}>
                             <div style={{ fontSize: '0.72rem', textTransform: 'uppercase', color: 'var(--crimson-accent)', fontWeight: 700, letterSpacing: '0.08em', marginBottom: '4px' }}>
                               Verified Credential
@@ -1013,7 +983,6 @@ export default function App() {
                         </div>
                       ))}
 
-                      {/* Photo documentation */}
                       {exp.photos && exp.photos.length > 0 && (
                         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: '14px', marginTop: '6px' }}>
                           {exp.photos.map((photo, pIdx) => (
@@ -1071,7 +1040,6 @@ export default function App() {
             ))}
           </div>
 
-          {/* Education Spotlight Card */}
           <div className="glass-card" style={{ 
             maxWidth: '900px', 
             margin: '40px auto 0', 
@@ -1110,7 +1078,6 @@ export default function App() {
         </div>
       </section>
 
-      {/* Collaboration & Contact Section matching Reference 1 layout ("Сотрудничество") */}
       <section id="contact" style={{ padding: '80px 0 40px', position: 'relative' }}>
         <div className="container">
           
@@ -1122,7 +1089,6 @@ export default function App() {
             position: 'relative'
           }}>
             
-            {/* Background luxury gradient glow */}
             <div style={{
               position: 'absolute',
               bottom: '-80px',
@@ -1140,7 +1106,7 @@ export default function App() {
               <div>
                 <span className="badge-glow" style={{ marginBottom: '14px' }}>Get In Touch</span>
                 <h2 className="font-editorial" style={{ fontSize: 'clamp(2.5rem, 4.5vw, 3.8rem)', color: '#fff4eb', lineHeight: '1.1', marginBottom: '16px' }}>
-                  Connect With me!.
+                  Connect With me!
                 </h2>
                 <p style={{ color: 'var(--text-muted)', fontSize: '1.05rem', lineHeight: '1.7', marginBottom: '30px' }}>
                   Open for software engineering opportunities, fullstack web projects, AI system integrations, or organizational partnerships. Send a message directly or connect via social channels.
@@ -1220,7 +1186,6 @@ export default function App() {
                 </div>
               </div>
 
-              {/* Direct Quick Message Form */}
               <div style={{
                 background: 'rgba(20, 5, 8, 0.85)',
                 border: '1px solid rgba(244, 194, 194, 0.15)',
@@ -1354,7 +1319,6 @@ export default function App() {
         </div>
       </section>
 
-      {/* Fullscreen Image Preview Lightbox Modal */}
       {previewModalImage && (
         <div 
           onClick={() => setPreviewModalImage(null)}
@@ -1433,7 +1397,6 @@ export default function App() {
         </div>
       )}
 
-      {/* Footer */}
       <footer style={{ marginTop: '50px', textAlign: 'center', borderTop: '1px solid rgba(244, 194, 194, 0.1)', paddingTop: '30px' }}>
         <p className="font-editorial" style={{ fontSize: '1.2rem', color: 'var(--rose-gold)', letterSpacing: '0.05em' }}>
           Khalisa Kasih Redwina &bull; Portfolio 2026
