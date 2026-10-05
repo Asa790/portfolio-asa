@@ -453,6 +453,44 @@ export default function App() {
                         display: 'block'
                       }}
                     />
+
+                    {/* Floating Glassmorphism Badge Left */}
+                    <div className="glass-float-badge" style={{
+                      position: 'absolute',
+                      top: '16px',
+                      left: '-28px',
+                      padding: '6px 12px',
+                      display: 'flex',
+                      alignItems: 'center',
+                      gap: '6px',
+                      fontSize: '0.74rem',
+                      color: '#fff',
+                      fontWeight: 600,
+                      letterSpacing: '0.03em',
+                      zIndex: 3
+                    }}>
+                      <Code2 size={13} color="#e63956" />
+                      <span>Software Eng</span>
+                    </div>
+
+                    {/* Floating Glassmorphism Badge Right */}
+                    <div className="glass-float-badge" style={{
+                      position: 'absolute',
+                      bottom: '16px',
+                      right: '-28px',
+                      padding: '6px 12px',
+                      display: 'flex',
+                      alignItems: 'center',
+                      gap: '6px',
+                      fontSize: '0.74rem',
+                      color: '#fff',
+                      fontWeight: 600,
+                      letterSpacing: '0.03em',
+                      zIndex: 3
+                    }}>
+                      <Sparkles size={13} color="#ffb3c1" />
+                      <span>AI &amp; Web</span>
+                    </div>
                   </div>
 
                   <p style={{ 
