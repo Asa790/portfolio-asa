@@ -258,12 +258,27 @@ export const portfolioData = {
       period: "Mar 2025 - May 2026",
       role: "Content & Editing Team Specialist",
       organization: "HIMTI BINUS University Bekasi",
-      description: "Specialized multimedia division generating visual assets for official social channels.",
+      description: "Specialized multimedia division generating visual assets for official social channels and organizational event recaps.",
       bullets: [
-        "Designed promotional graphics, infographics, and typography for official social feeds.",
-        "Produced and edited video content and reels for organizational campaigns."
+        "Designed promotional graphics, event recap posters, reels assets, and typography for official organizational channels.",
+        "Created multimedia creative post-productions for internal HIMTI bonding and sports tournaments (Basketball Bonding Time, HiMeet 2025, Mini Soccer).",
+        "Collaborated with project divisions to maintain brand aesthetic guidelines and high audience engagement rates."
       ],
-      tag: "Multimedia & Design"
+      tag: "Multimedia & Design",
+      photos: [
+        {
+          url: "/editing-basketball-recap.png",
+          caption: "Basketball Bonding Time MC Team 3 Poster & Social Recap Artwork"
+        },
+        {
+          url: "/editing-himeet-recap.png",
+          caption: "HiMeet 2025 Recapped Vintage Typewriter Photo Collage Poster"
+        },
+        {
+          url: "/editing-minisoccer-banner.png",
+          caption: "Mini Soccer Recapped Panoramic Action Banner & Photo Editorial"
+        }
+      ]
     },
     {
       period: "Mar 2025 - May 2026",
