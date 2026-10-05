@@ -1140,7 +1140,7 @@ export default function App() {
             background: 'linear-gradient(135deg, rgba(35, 10, 16, 0.9), rgba(15, 4, 7, 0.95))',
             border: '1px solid rgba(244, 194, 194, 0.25)'
           }}>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: education.certifications ? '24px' : '0' }}>
               <div style={{ 
                 width: '54px', 
                 height: '54px', 
@@ -1148,8 +1148,9 @@ export default function App() {
                 background: 'linear-gradient(135deg, #a81c33, #e63956)', 
                 display: 'flex', 
                 alignItems: 'center', 
-                justifyContent: 'center',
-                color: '#fff'
+                justifyContent: 'center', 
+                color: '#fff',
+                flexShrink: 0
               }}>
                 <GraduationCap size={28} />
               </div>
@@ -1166,6 +1167,120 @@ export default function App() {
                 </p>
               </div>
             </div>
+
+            {/* Certifications & Academic Credentials Under Formal Education */}
+            {education.certifications && education.certifications.length > 0 && (
+              <div style={{
+                borderTop: '1px solid rgba(244, 194, 194, 0.15)',
+                paddingTop: '20px',
+                display: 'flex',
+                flexDirection: 'column',
+                gap: '14px'
+              }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '0.82rem', textTransform: 'uppercase', color: 'var(--rose-gold)', letterSpacing: '0.08em', fontWeight: 600 }}>
+                  <Award size={16} color="#e63956" /> Academic &amp; Professional Certifications
+                </div>
+
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '14px' }}>
+                  {education.certifications.map((cert, cIdx) => (
+                    <div 
+                      key={cIdx}
+                      className="glass-panel-inset"
+                      style={{
+                        padding: '18px 20px',
+                        display: 'flex',
+                        flexDirection: 'column',
+                        gap: '16px'
+                      }}
+                    >
+                      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', flexWrap: 'wrap', gap: '12px' }}>
+                        <div>
+                          <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '4px' }}>
+                            <h4 className="font-cinzel" style={{ fontSize: '1.1rem', color: '#fff', margin: 0 }}>
+                              {cert.title}
+                            </h4>
+                            <span className="glass-tag" style={{ fontSize: '0.7rem' }}>
+                              {cert.courseCode}
+                            </span>
+                          </div>
+                          <p style={{ color: 'var(--rose-gold)', fontSize: '0.88rem', fontWeight: 600, margin: 0 }}>
+                            Issued by {cert.issuer} &bull; {cert.date}
+                          </p>
+                          <p style={{ color: 'var(--text-muted)', fontSize: '0.84rem', marginTop: '6px', lineHeight: '1.5', maxWidth: '680px' }}>
+                            {cert.description}
+                          </p>
+                        </div>
+
+                        {cert.credentialUrl && (
+                          <a 
+                            href={cert.credentialUrl}
+                            target="_blank"
+                            rel="noreferrer"
+                            className="glass-pill"
+                            style={{ fontSize: '0.78rem', textDecoration: 'none' }}
+                          >
+                            <ExternalLink size={13} color="#e63956" /> Verify Credential
+                          </a>
+                        )}
+                      </div>
+
+                      {/* Certificate Preview Card with Lightbox */}
+                      {cert.image && (
+                        <div 
+                          onClick={() => setPreviewModalImage(cert.image)}
+                          style={{
+                            position: 'relative',
+                            width: '100%',
+                            maxHeight: '260px',
+                            height: '240px',
+                            borderRadius: '12px',
+                            overflow: 'hidden',
+                            border: '1px solid rgba(230, 57, 86, 0.4)',
+                            cursor: 'pointer',
+                            background: '#0d0305',
+                            boxShadow: '0 8px 24px rgba(0, 0, 0, 0.55)',
+                            transition: 'all 0.3s ease'
+                          }}
+                          onMouseEnter={e => {
+                            e.currentTarget.style.borderColor = 'var(--crimson-accent)';
+                            e.currentTarget.style.boxShadow = '0 10px 30px rgba(230, 57, 86, 0.35)';
+                          }}
+                          onMouseLeave={e => {
+                            e.currentTarget.style.borderColor = 'rgba(230, 57, 86, 0.4)';
+                            e.currentTarget.style.boxShadow = '0 8px 24px rgba(0, 0, 0, 0.55)';
+                          }}
+                        >
+                          <img 
+                            src={cert.image} 
+                            alt={`${cert.title} Certificate`}
+                            style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center 20%', transition: 'transform 0.4s ease' }}
+                            onMouseEnter={e => e.currentTarget.style.transform = 'scale(1.04)'}
+                            onMouseLeave={e => e.currentTarget.style.transform = 'scale(1)'}
+                          />
+                          <div style={{
+                            position: 'absolute',
+                            inset: 0,
+                            background: 'linear-gradient(to top, rgba(10, 3, 5, 0.92) 0%, transparent 60%)',
+                            display: 'flex',
+                            alignItems: 'flex-end',
+                            justifyContent: 'space-between',
+                            padding: '12px 16px',
+                            pointerEvents: 'none'
+                          }}>
+                            <span style={{ fontSize: '0.8rem', color: '#fff', fontWeight: 500 }}>
+                              {cert.title} &bull; Click to view full certificate
+                            </span>
+                            <span style={{ fontSize: '0.72rem', color: 'var(--rose-gold)' }}>
+                              IBM CC0101EN
+                            </span>
+                          </div>
+                        </div>
+                      )}
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
           </div>
 
         </div>

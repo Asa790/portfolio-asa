@@ -282,6 +282,17 @@ export const portfolioData = {
     institution: "Universitas Bina Nusantara (BINUS) - Bekasi",
     degree: "Bachelor of Computer Science - Software Engineering",
     period: "Jul 2024 - Present",
-    details: "Focus on Web Development, Software Engineering methodologies, and Machine Learning integration."
+    details: "Focus on Web Development, Software Engineering methodologies, and Machine Learning integration.",
+    certifications: [
+      {
+        title: "Introduction to Cloud",
+        issuer: "IBM & Cognitive Class",
+        courseCode: "CC0101EN",
+        date: "October 5, 2026",
+        image: "/ibm-cloud-certif.png",
+        credentialUrl: "https://courses.cognitiveclass.ai/certificates/1646075afd4f47389d5affde932123ae",
+        description: "Certified by IBM Developer Skills Network on fundamental Cloud Computing concepts, deployment models, cloud architecture, and modern infrastructure services."
+      }
+    ]
   }
 };
