@@ -439,7 +439,7 @@ export default function App() {
                 <div style={{
                   width: '100%',
                   aspectRatio: '1/1',
-                  maxHeight: '380px',
+                  maxHeight: '410px',
                   borderRadius: '24px',
                   background: 'linear-gradient(135deg, #3d0c15 0%, #150306 100%)',
                   border: '1px solid rgba(244, 194, 194, 0.2)',
@@ -449,14 +449,14 @@ export default function App() {
                   justifyContent: 'center',
                   position: 'relative',
                   overflow: 'hidden',
-                  padding: '20px',
+                  padding: '24px',
                   textAlign: 'center'
                 }}>
                   
                   <div style={{
                     position: 'absolute',
-                    width: '280px',
-                    height: '280px',
+                    width: '320px',
+                    height: '320px',
                     borderRadius: '50%',
                     background: 'radial-gradient(circle, #e63956 0%, transparent 70%)',
                     filter: 'blur(55px)',
@@ -465,12 +465,12 @@ export default function App() {
 
                   <div style={{
                     position: 'relative',
-                    width: '210px',
-                    height: '210px',
-                    borderRadius: '28px',
+                    width: '270px',
+                    height: '270px',
+                    borderRadius: '32px',
                     padding: '4px',
                     background: 'linear-gradient(135deg, #e63956, #a81c33, rgba(244, 194, 194, 0.6))',
-                    boxShadow: '0 0 45px rgba(230, 57, 86, 0.65)',
+                    boxShadow: '0 0 50px rgba(230, 57, 86, 0.65)',
                     marginBottom: '16px',
                     zIndex: 2
                   }}>
@@ -480,7 +480,7 @@ export default function App() {
                       style={{
                         width: '100%',
                         height: '100%',
-                        borderRadius: '24px',
+                        borderRadius: '28px',
                         objectFit: 'cover',
                         objectPosition: 'center 20%',
                         display: 'block'
@@ -492,52 +492,38 @@ export default function App() {
                   <div style={{
                     display: 'flex',
                     justifyContent: 'center',
-                    gap: '10px',
-                    marginBottom: '14px',
+                    gap: '12px',
                     zIndex: 2,
                     flexWrap: 'wrap'
                   }}>
                     <div className="glass-float-badge" style={{
-                      padding: '5px 14px',
+                      padding: '6px 16px',
                       display: 'inline-flex',
                       alignItems: 'center',
                       gap: '6px',
-                      fontSize: '0.74rem',
+                      fontSize: '0.78rem',
                       color: '#fff',
                       fontWeight: 600,
                       letterSpacing: '0.04em'
                     }}>
-                      <Code2 size={13} color="#e63956" />
+                      <Code2 size={14} color="#e63956" />
                       <span>Software Eng</span>
                     </div>
 
                     <div className="glass-float-badge" style={{
-                      padding: '5px 14px',
+                      padding: '6px 16px',
                       display: 'inline-flex',
                       alignItems: 'center',
                       gap: '6px',
-                      fontSize: '0.74rem',
+                      fontSize: '0.78rem',
                       color: '#fff',
                       fontWeight: 600,
                       letterSpacing: '0.04em'
                     }}>
-                      <Sparkles size={13} color="#ffb3c1" />
+                      <Sparkles size={14} color="#ffb3c1" />
                       <span>AI &amp; Web</span>
                     </div>
                   </div>
-
-                  <p style={{ 
-                    fontSize: '0.88rem', 
-                    color: 'var(--rose-gold)', 
-                    zIndex: 2, 
-                    fontWeight: 600,
-                    letterSpacing: '0.04em',
-                    fontFamily: "'Plus Jakarta Sans', sans-serif",
-                    lineHeight: '1.4',
-                    maxWidth: '90%'
-                  }}>
-                    Computer Science &ndash; Software Engineering Undergraduate
-                  </p>
                 </div>
 
                 <div style={{ marginTop: '20px', display: 'flex', flexDirection: 'column', gap: '10px' }}>
