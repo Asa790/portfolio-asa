@@ -438,7 +438,7 @@ export default function App() {
                     padding: '4px',
                     background: 'linear-gradient(135deg, #e63956, #a81c33, rgba(244, 194, 194, 0.6))',
                     boxShadow: '0 0 45px rgba(230, 57, 86, 0.65)',
-                    marginBottom: '14px',
+                    marginBottom: '16px',
                     zIndex: 2
                   }}>
                     <img 
@@ -453,40 +453,40 @@ export default function App() {
                         display: 'block'
                       }}
                     />
+                  </div>
 
-                    {/* Floating Glassmorphism Badge Left */}
+                  {/* Clean Glassmorphic Floating Pill Tags Placed Safely Outside Photo */}
+                  <div style={{
+                    display: 'flex',
+                    justifyContent: 'center',
+                    gap: '10px',
+                    marginBottom: '14px',
+                    zIndex: 2,
+                    flexWrap: 'wrap'
+                  }}>
                     <div className="glass-float-badge" style={{
-                      position: 'absolute',
-                      top: '16px',
-                      left: '-28px',
-                      padding: '6px 12px',
-                      display: 'flex',
+                      padding: '5px 14px',
+                      display: 'inline-flex',
                       alignItems: 'center',
                       gap: '6px',
                       fontSize: '0.74rem',
                       color: '#fff',
                       fontWeight: 600,
-                      letterSpacing: '0.03em',
-                      zIndex: 3
+                      letterSpacing: '0.04em'
                     }}>
                       <Code2 size={13} color="#e63956" />
                       <span>Software Eng</span>
                     </div>
 
-                    {/* Floating Glassmorphism Badge Right */}
                     <div className="glass-float-badge" style={{
-                      position: 'absolute',
-                      bottom: '16px',
-                      right: '-28px',
-                      padding: '6px 12px',
-                      display: 'flex',
+                      padding: '5px 14px',
+                      display: 'inline-flex',
                       alignItems: 'center',
                       gap: '6px',
                       fontSize: '0.74rem',
                       color: '#fff',
                       fontWeight: 600,
-                      letterSpacing: '0.03em',
-                      zIndex: 3
+                      letterSpacing: '0.04em'
                     }}>
                       <Sparkles size={13} color="#ffb3c1" />
                       <span>AI &amp; Web</span>
@@ -810,17 +810,9 @@ export default function App() {
                 </div>
 
                 <div>
-                  <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px', marginBottom: '18px' }}>
+                  <div style={{ display: 'flex', flexWrap: 'wrap', gap: '7px', marginBottom: '18px' }}>
                     {proj.tags.map((tag, i) => (
-                      <span key={i} style={{
-                        background: 'rgba(230, 57, 86, 0.1)',
-                        border: '1px solid rgba(230, 57, 86, 0.25)',
-                        color: 'var(--rose-gold)',
-                        padding: '3px 10px',
-                        borderRadius: '6px',
-                        fontSize: '0.75rem',
-                        fontWeight: 500
-                      }}>
+                      <span key={i} className="glass-tag">
                         #{tag}
                       </span>
                     ))}
@@ -1224,10 +1216,7 @@ export default function App() {
                 </div>
               </div>
 
-              <div style={{
-                background: 'rgba(20, 5, 8, 0.85)',
-                border: '1px solid rgba(244, 194, 194, 0.15)',
-                borderRadius: '16px',
+              <div className="glass-panel-inset" style={{
                 padding: '32px'
               }}>
                 <h3 className="font-cinzel" style={{ fontSize: '1.25rem', color: '#fff', marginBottom: '8px' }}>
