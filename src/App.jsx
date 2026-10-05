@@ -67,12 +67,38 @@ const techLogos = {
   pycharm: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pycharm/pycharm-original.svg",
   eclipse: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/eclipse/eclipse-original.svg",
   devc: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg",
-  cisco: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cisco/cisco-original.svg",
-  postman: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postman/postman-original.svg"
+  cisco: "https://upload.wikimedia.org/wikipedia/commons/0/08/Cisco_logo_blue_2016.svg",
+  postman: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postman/postman-original.svg",
+  xampp: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/apache/apache-original.svg"
 };
 
 const TechLogo = ({ name, size = 22 }) => {
-  const src = techLogos[name.toLowerCase()];
+  const lower = name.toLowerCase();
+
+  if (lower === 'cisco' || lower === 'ciscopackettracer') {
+    return (
+      <svg width={size} height={size} viewBox="0 0 24 24" fill="none">
+        <rect x="2" y="9" width="2" height="6" rx="1" fill="#049fd9" />
+        <rect x="5.5" y="6" width="2" height="12" rx="1" fill="#049fd9" />
+        <rect x="9" y="4" width="2" height="16" rx="1" fill="#049fd9" />
+        <rect x="13" y="4" width="2" height="16" rx="1" fill="#049fd9" />
+        <rect x="16.5" y="6" width="2" height="12" rx="1" fill="#049fd9" />
+        <rect x="20" y="9" width="2" height="6" rx="1" fill="#049fd9" />
+      </svg>
+    );
+  }
+
+  if (lower === 'xampp') {
+    return (
+      <svg width={size} height={size} viewBox="0 0 24 24" fill="none">
+        <rect width="24" height="24" rx="6" fill="#FB7A24" />
+        <path d="M6 7L18 17M18 7L6 17" stroke="#ffffff" strokeWidth="2.5" strokeLinecap="round" />
+        <circle cx="12" cy="12" r="2.5" fill="#ffffff" />
+      </svg>
+    );
+  }
+
+  const src = techLogos[lower];
   if (!src) return <Terminal size={size} color="#e63956" />;
   return (
     <img 
@@ -545,57 +571,101 @@ export default function App() {
             </p>
           </div>
 
-          <div style={{ marginBottom: '50px' }}>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '22px' }}>
+          <div style={{ marginBottom: '60px' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '32px' }}>
               <div style={{ width: '32px', height: '32px', borderRadius: '8px', background: 'rgba(230, 57, 86, 0.2)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#ffb3c1' }}>
                 <Code2 size={18} />
               </div>
-              <h3 className="font-cinzel" style={{ fontSize: '1.3rem', color: '#fff', letterSpacing: '0.06em' }}>
-                Technical &amp; Hard Skills
+              <h3 className="font-cinzel" style={{ fontSize: '1.4rem', color: '#fff', letterSpacing: '0.06em' }}>
+                Technical &amp; Hard Skills by Category
               </h3>
             </div>
 
-            <div style={{ 
-              display: 'grid', 
-              gridTemplateColumns: 'repeat(auto-fill, minmax(170px, 1fr))', 
-              gap: '14px' 
-            }}>
-              {skills.hardSkills.map((tech, idx) => (
-                <div 
-                  key={idx} 
-                  className="glass-card" 
-                  style={{ 
-                    padding: '16px 18px', 
-                    display: 'flex', 
-                    alignItems: 'center', 
-                    gap: '14px',
-                    transition: 'all 0.25s ease'
-                  }}
-                >
-                  <div style={{
-                    width: '38px',
-                    height: '38px',
-                    borderRadius: '10px',
-                    background: 'rgba(255, 255, 255, 0.04)',
-                    border: '1px solid rgba(244, 194, 194, 0.15)',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    flexShrink: 0
-                  }}>
-                    <TechLogo name={tech.icon} size={22} />
-                  </div>
-                  <div style={{ overflow: 'hidden' }}>
-                    <div style={{ fontSize: '0.92rem', fontWeight: 600, color: '#fff', whiteSpace: 'nowrap', textOverflow: 'ellipsis', overflow: 'hidden' }}>
-                      {tech.name}
-                    </div>
-                    <div style={{ fontSize: '0.72rem', color: 'var(--crimson-accent)', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
-                      {tech.category}
-                    </div>
-                  </div>
+            {/* Grouped Skills by Distinct Category */}
+            {(() => {
+              const categories = [...new Set(skills.hardSkills.map(s => s.category))];
+              return (
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '30px' }}>
+                  {categories.map((cat, catIdx) => {
+                    const items = skills.hardSkills.filter(s => s.category === cat);
+                    return (
+                      <div key={catIdx} style={{
+                        background: 'linear-gradient(135deg, rgba(32, 10, 16, 0.45) 0%, rgba(15, 4, 7, 0.6) 100%)',
+                        border: '1px solid rgba(244, 194, 194, 0.12)',
+                        borderTop: '1px solid rgba(255, 255, 255, 0.18)',
+                        borderRadius: '16px',
+                        padding: '20px 22px'
+                      }}>
+                        <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '16px' }}>
+                          <span style={{
+                            width: '8px',
+                            height: '8px',
+                            borderRadius: '50%',
+                            background: 'var(--crimson-accent)',
+                            boxShadow: '0 0 8px var(--crimson-accent)'
+                          }} />
+                          <h4 style={{
+                            color: '#fff',
+                            fontSize: '0.98rem',
+                            fontWeight: 600,
+                            letterSpacing: '0.04em',
+                            textTransform: 'uppercase',
+                            fontFamily: "'Cinzel', serif"
+                          }}>
+                            {cat}
+                          </h4>
+                          <span style={{ fontSize: '0.72rem', color: 'var(--rose-gold)', opacity: 0.7 }}>
+                            ({items.length})
+                          </span>
+                        </div>
+
+                        <div style={{ 
+                          display: 'grid', 
+                          gridTemplateColumns: 'repeat(auto-fill, minmax(185px, 1fr))', 
+                          gap: '12px' 
+                        }}>
+                          {items.map((tech, idx) => (
+                            <div 
+                              key={idx} 
+                              className="glass-card" 
+                              style={{ 
+                                padding: '14px 16px', 
+                                display: 'flex', 
+                                alignItems: 'center', 
+                                gap: '12px',
+                                transition: 'all 0.25s ease'
+                              }}
+                            >
+                              <div style={{
+                                width: '36px',
+                                height: '36px',
+                                borderRadius: '10px',
+                                background: 'rgba(255, 255, 255, 0.05)',
+                                border: '1px solid rgba(244, 194, 194, 0.18)',
+                                display: 'flex',
+                                alignItems: 'center',
+                                justifyContent: 'center',
+                                flexShrink: 0
+                              }}>
+                                <TechLogo name={tech.icon} size={22} />
+                              </div>
+                              <div style={{ overflow: 'hidden' }}>
+                                <div style={{ fontSize: '0.92rem', fontWeight: 600, color: '#fff', whiteSpace: 'nowrap', textOverflow: 'ellipsis', overflow: 'hidden' }}>
+                                  {tech.name}
+                                </div>
+                                <div style={{ fontSize: '0.72rem', color: 'var(--crimson-accent)', textTransform: 'uppercase', letterSpacing: '0.04em' }}>
+                                  {tech.category}
+                                </div>
+                              </div>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    );
+                  })}
                 </div>
-              ))}
-            </div>
+              );
+            })()}
           </div>
 
           <div>
