@@ -1138,7 +1138,7 @@ export default function App() {
                                       flexShrink: 0
                                     }}
                                   >
-                                    <ExternalLink size={11} color="#ffb3c1" /> Instagram Reel
+                                    <ExternalLink size={11} color="#ffb3c1" /> {photo.linkLabel || 'Instagram'}
                                   </a>
                                 )}
                               </div>

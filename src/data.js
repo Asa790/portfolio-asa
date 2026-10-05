@@ -268,17 +268,21 @@ export const portfolioData = {
       photos: [
         {
           url: "/editing-basketball-recap.png",
-          caption: "Basketball Bonding Time MC Team 3 Poster & Social Recap Artwork"
+          caption: "Basketball Bonding Time MC Team 3 Poster & Social Recap Artwork",
+          link: "https://www.instagram.com/reel/DK__ShePe0t/?utm_source=ig_web_copy_link&stkn=MzRlODBiNWFlZA==",
+          linkLabel: "Instagram Reel"
         },
         {
           url: "/editing-himeet-recap.png",
           caption: "HiMeet 2025 Recapped Vintage Typewriter Photo Collage Poster",
           link: "https://www.instagram.com/reel/DQTRO2kj1ml/?utm_source=ig_web_copy_link&stkn=MzRlODBiNWFlZA==",
-          linkLabel: "Watch HiMeet 2025 Reel"
+          linkLabel: "Instagram Reel"
         },
         {
           url: "/editing-minisoccer-banner.png",
-          caption: "Mini Soccer Recapped Panoramic Action Banner & Photo Editorial"
+          caption: "Mini Soccer Recapped Panoramic Action Banner & Photo Editorial",
+          link: "https://www.instagram.com/p/DJi5MjPRv_T/?utm_source=ig_web_copy_link&stkn=MzRlODBiNWFlZA==",
+          linkLabel: "Instagram Post"
         }
       ]
     },
