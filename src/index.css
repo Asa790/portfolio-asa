@@ -37,6 +37,11 @@ body {
     radial-gradient(circle at 0% 80%, rgba(168, 28, 51, 0.25), transparent 50%),
     linear-gradient(to bottom, #0a0405, #140508 50%, #0a0405);
   background-attachment: fixed;
+  cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath d='M3 3l7 18 3-7 7-3L3 3z' fill='%23e63956' stroke='%23ffffff' stroke-width='1.5' stroke-linejoin='round'/%3E%3Ccircle cx='3' cy='3' r='2' fill='%23ff4d6d'/%3E%3C/svg%3E") 3 3, auto;
+}
+
+a, button, [role='button'], input, textarea, select, .btn-crimson, .btn-outline, .glass-pill, .glass-card, [onclick] {
+  cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='28' viewBox='0 0 28 28'%3E%3Ccircle cx='14' cy='14' r='8' fill='%23e63956' fill-opacity='0.45' stroke='%23ff4d6d' stroke-width='1.5'/%3E%3Ccircle cx='14' cy='14' r='3.5' fill='%23ffffff'/%3E%3C/svg%3E") 14 14, pointer !important;
 }
 
 
