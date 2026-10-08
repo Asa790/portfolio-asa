@@ -114,35 +114,77 @@ const TechLogo = ({ name, size = 22 }) => {
   );
 };
 
-const TacticalUmbrellaEmblem = ({ size = 18 }) => (
+const TacticalUmbrellaEmblem = ({ size = 20 }) => (
   <svg 
     width={size} 
     height={size} 
     viewBox="0 0 100 100" 
     className="tactical-umbrella-icon"
+    style={{ overflow: 'visible' }}
   >
-    <defs>
-      <clipPath id="circleClip">
-        <circle cx="50" cy="50" r="48" />
-      </clipPath>
-    </defs>
-    <g clipPath="url(#circleClip)">
-      <circle cx="50" cy="50" r="48" fill="#e63956" />
-      {/* 4 alternating white triangular segments to complete the iconic 8-segment umbrella emblem */}
-      <polygon points="50,50 15,15 85,15" fill="#ffffff" />
-      <polygon points="50,50 85,15 85,85" fill="#e63956" />
-      <polygon points="50,50 85,85 15,85" fill="#ffffff" />
-      <polygon points="50,50 15,85 15,15" fill="#e63956" />
-      {/* 45-degree rotation for standard 8-segment layout */}
-      <polygon points="50,50 50,2 98,50" fill="#ffffff" opacity="0.95" />
-      <polygon points="50,50 98,50 50,98" fill="#e63956" />
-      <polygon points="50,50 50,98 2,50" fill="#ffffff" opacity="0.95" />
-      <polygon points="50,50 2,50 50,2" fill="#e63956" />
-      {/* Subtle center precision ring */}
-      <circle cx="50" cy="50" r="48" fill="none" stroke="#f4c2c2" strokeWidth="2.5" />
-      <circle cx="50" cy="50" r="7" fill="#ffffff" />
-      <circle cx="50" cy="50" r="3.5" fill="#e63956" />
-    </g>
+    {/* Authentic Umbrella Corporation 8-scalloped canopy emblem */}
+    {/* Red Segments (4 alternating) with concave scalloped outer edges */}
+    {/* Segment 0: Top (North: 67.5 deg to 112.5 deg) */}
+    <path 
+      d="M50,50 L68.37,5.63 A48,48 0 0,0 31.63,5.63 Z" 
+      fill="#b8001f" 
+      stroke="#140508" 
+      strokeWidth="1.2" 
+    />
+    {/* Segment 2: East (337.5 deg to 22.5 deg) */}
+    <path 
+      d="M50,50 L94.37,31.63 A48,48 0 0,0 94.37,68.37 Z" 
+      fill="#b8001f" 
+      stroke="#140508" 
+      strokeWidth="1.2" 
+    />
+    {/* Segment 4: South (247.5 deg to 292.5 deg) */}
+    <path 
+      d="M50,50 L31.63,94.37 A48,48 0 0,0 68.37,94.37 Z" 
+      fill="#b8001f" 
+      stroke="#140508" 
+      strokeWidth="1.2" 
+    />
+    {/* Segment 6: West (157.5 deg to 202.5 deg) */}
+    <path 
+      d="M50,50 L5.63,68.37 A48,48 0 0,0 5.63,31.63 Z" 
+      fill="#b8001f" 
+      stroke="#140508" 
+      strokeWidth="1.2" 
+    />
+
+    {/* White Segments (4 alternating) with concave scalloped outer edges */}
+    {/* Segment 1: North-East (22.5 deg to 67.5 deg) */}
+    <path 
+      d="M50,50 L94.37,31.63 A48,48 0 0,0 68.37,5.63 Z" 
+      fill="#ffffff" 
+      stroke="#140508" 
+      strokeWidth="1.2" 
+    />
+    {/* Segment 3: South-East (292.5 deg to 337.5 deg) */}
+    <path 
+      d="M50,50 L68.37,94.37 A48,48 0 0,0 94.37,68.37 Z" 
+      fill="#ffffff" 
+      stroke="#140508" 
+      strokeWidth="1.2" 
+    />
+    {/* Segment 5: South-West (202.5 deg to 247.5 deg) */}
+    <path 
+      d="M50,50 L5.63,68.37 A48,48 0 0,0 31.63,94.37 Z" 
+      fill="#ffffff" 
+      stroke="#140508" 
+      strokeWidth="1.2" 
+    />
+    {/* Segment 7: North-West (112.5 deg to 157.5 deg) */}
+    <path 
+      d="M50,50 L31.63,5.63 A48,48 0 0,0 5.63,31.63 Z" 
+      fill="#ffffff" 
+      stroke="#140508" 
+      strokeWidth="1.2" 
+    />
+
+    {/* Subtle center hub pin */}
+    <circle cx="50" cy="50" r="2.5" fill="#140508" />
   </svg>
 );
 
@@ -475,8 +517,8 @@ export default function App() {
 
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '16px', flexWrap: 'wrap', gap: '8px' }}>
                   <div className="tactical-tech-badge">
-                    <TacticalUmbrellaEmblem size={18} />
-                    <span>BIO-TECH // SE.08</span>
+                    <TacticalUmbrellaEmblem size={20} />
+                    <span>AI - ML - SE</span>
                   </div>
                   <div className="hud-telemetry-pill">
                     <span className="indicator-dot" />
