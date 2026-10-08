@@ -114,6 +114,38 @@ const TechLogo = ({ name, size = 22 }) => {
   );
 };
 
+const TacticalUmbrellaEmblem = ({ size = 18 }) => (
+  <svg 
+    width={size} 
+    height={size} 
+    viewBox="0 0 100 100" 
+    className="tactical-umbrella-icon"
+  >
+    <defs>
+      <clipPath id="circleClip">
+        <circle cx="50" cy="50" r="48" />
+      </clipPath>
+    </defs>
+    <g clipPath="url(#circleClip)">
+      <circle cx="50" cy="50" r="48" fill="#e63956" />
+      {/* 4 alternating white triangular segments to complete the iconic 8-segment umbrella emblem */}
+      <polygon points="50,50 15,15 85,15" fill="#ffffff" />
+      <polygon points="50,50 85,15 85,85" fill="#e63956" />
+      <polygon points="50,50 85,85 15,85" fill="#ffffff" />
+      <polygon points="50,50 15,85 15,15" fill="#e63956" />
+      {/* 45-degree rotation for standard 8-segment layout */}
+      <polygon points="50,50 50,2 98,50" fill="#ffffff" opacity="0.95" />
+      <polygon points="50,50 98,50 50,98" fill="#e63956" />
+      <polygon points="50,50 50,98 2,50" fill="#ffffff" opacity="0.95" />
+      <polygon points="50,50 2,50 50,2" fill="#e63956" />
+      {/* Subtle center precision ring */}
+      <circle cx="50" cy="50" r="48" fill="none" stroke="#f4c2c2" strokeWidth="2.5" />
+      <circle cx="50" cy="50" r="7" fill="#ffffff" />
+      <circle cx="50" cy="50" r="3.5" fill="#e63956" />
+    </g>
+  </svg>
+);
+
 export default function App() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeTab, setActiveTab] = useState('all');
@@ -442,9 +474,9 @@ export default function App() {
                 }} />
 
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '16px', flexWrap: 'wrap', gap: '8px' }}>
-                  <div className="umbrella-badge">
-                    <span className="umbrella-logo-icon" />
-                    <span>UMBRELLA CORP // DIV.08</span>
+                  <div className="tactical-tech-badge">
+                    <TacticalUmbrellaEmblem size={18} />
+                    <span>BIO-TECH // SE.08</span>
                   </div>
                   <div className="hud-telemetry-pill">
                     <span className="indicator-dot" />
@@ -572,6 +604,9 @@ export default function App() {
         <div className="container">
           
           <div style={{ textAlign: 'center', marginBottom: '50px' }}>
+            <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '8px' }}>
+              <span className="hud-section-tag">SYS.02 // CAPABILITIES &amp; STACK</span>
+            </div>
             <span className="badge-glow" style={{ marginBottom: '12px' }}>Skills &amp; Expertise</span>
             <h2 className="font-editorial" style={{ fontSize: 'clamp(2.2rem, 4vw, 3.2rem)', color: '#fff4eb' }}>
               Technical Stack &amp; Soft Skills
@@ -735,6 +770,9 @@ export default function App() {
           
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', flexWrap: 'wrap', gap: '20px', marginBottom: '40px' }}>
             <div>
+              <div style={{ marginBottom: '8px' }}>
+                <span className="hud-section-tag">SYS.03 // DEPLOYMENTS &amp; CODEBASE</span>
+              </div>
               <span className="badge-glow" style={{ marginBottom: '12px' }}>Code &amp; Architecture</span>
               <h2 className="font-editorial" style={{ fontSize: 'clamp(2.2rem, 4vw, 3.2rem)', color: '#fff4eb' }}>
                 Featured Projects &amp; Repositories
@@ -949,6 +987,9 @@ export default function App() {
         <div className="container">
           
           <div style={{ textAlign: 'center', marginBottom: '50px' }}>
+            <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '8px' }}>
+              <span className="hud-section-tag">SYS.04 // OPERATIONS &amp; LEADERSHIP</span>
+            </div>
             <span className="badge-glow" style={{ marginBottom: '12px' }}>Track Record</span>
             <h2 className="font-editorial" style={{ fontSize: 'clamp(2.2rem, 4vw, 3.2rem)', color: '#fff4eb' }}>
               Leadership &amp; Organizational Experience
@@ -1356,6 +1397,9 @@ export default function App() {
             <div className="contact-grid">
               
               <div>
+                <div style={{ marginBottom: '8px' }}>
+                  <span className="hud-section-tag">SYS.05 // COMMS &amp; TRANSMISSION</span>
+                </div>
                 <span className="badge-glow" style={{ marginBottom: '14px' }}>Get In Touch</span>
                 <h2 className="font-editorial" style={{ fontSize: 'clamp(2.5rem, 4.5vw, 3.8rem)', color: '#fff4eb', lineHeight: '1.1', marginBottom: '16px' }}>
                   Connect With me!

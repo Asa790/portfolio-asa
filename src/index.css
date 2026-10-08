@@ -565,51 +565,60 @@ body::before {
   opacity: 0.65;
 }
 
-/* Umbrella Corporation HUD Elements */
-.umbrella-logo-icon {
-  display: inline-block;
+/* Cyber-Tactical Sci-Fi HUD Elements */
+.tactical-umbrella-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   width: 18px;
   height: 18px;
-  position: relative;
-  border-radius: 50%;
-  background: conic-gradient(
-    #ffffff 0deg 45deg,
-    #d90429 45deg 90deg,
-    #ffffff 90deg 135deg,
-    #d90429 135deg 180deg,
-    #ffffff 180deg 225deg,
-    #d90429 225deg 270deg,
-    #ffffff 270deg 315deg,
-    #d90429 315deg 360deg
-  );
-  box-shadow: 0 0 10px rgba(217, 4, 41, 0.5);
   flex-shrink: 0;
+  filter: drop-shadow(0 0 6px rgba(220, 20, 60, 0.6));
 }
 
-.umbrella-badge {
+.tactical-tech-badge {
   display: inline-flex;
   align-items: center;
   gap: 8px;
   padding: 4px 12px;
-  background: rgba(20, 4, 8, 0.85);
-  border: 1px solid rgba(220, 20, 60, 0.4);
-  border-radius: 6px;
+  background: rgba(18, 4, 8, 0.9);
+  border: 1px solid rgba(220, 20, 60, 0.45);
+  border-radius: 9999px;
   font-family: 'SF Mono', Consolas, monospace;
   font-size: 0.68rem;
   letter-spacing: 0.16em;
   color: #ffb3c1;
   text-transform: uppercase;
-  box-shadow: 0 0 14px rgba(220, 20, 60, 0.18), inset 0 0 8px rgba(220, 20, 60, 0.1);
+  box-shadow: 0 0 16px rgba(220, 20, 60, 0.22), inset 0 0 8px rgba(220, 20, 60, 0.12);
 }
 
 .hud-cross-decor {
   position: absolute;
-  color: rgba(255, 77, 109, 0.35);
+  color: rgba(255, 77, 109, 0.4);
   font-family: monospace;
   font-size: 11px;
   line-height: 1;
   pointer-events: none;
   user-select: none;
 }
+
+.hud-section-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: 'SF Mono', Consolas, monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  color: #ff99aa;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.hud-section-tag::before {
+  content: '//';
+  color: var(--crimson-accent);
+  font-weight: 700;
+}
+
 
 
