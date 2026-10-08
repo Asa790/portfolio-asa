@@ -1114,29 +1114,6 @@ export default function App() {
             })}
           </div>
 
-          <div className="glass-card" style={{ 
-            marginTop: '36px', 
-            padding: '28px 36px', 
-            display: 'flex', 
-            justifyContent: 'space-between', 
-            alignItems: 'center', 
-            flexWrap: 'wrap', 
-            gap: '20px',
-            background: 'linear-gradient(135deg, rgba(45, 12, 20, 0.9), rgba(20, 5, 10, 0.95))'
-          }}>
-            <div>
-              <h4 className="font-cinzel" style={{ fontSize: '1.25rem', color: '#fff' }}>
-                Add or Sync More Repositories
-              </h4>
-              <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem', marginTop: '4px' }}>
-                Easily plug in your newest GitHub projects, commit history, and live deployments.
-              </p>
-            </div>
-            <a href="https://github.com/khalisaredwina" target="_blank" rel="noreferrer" className="btn-crimson">
-              <GithubIcon size={18} /> Open GitHub Profile
-            </a>
-          </div>
-
         </div>
       </section>
 
