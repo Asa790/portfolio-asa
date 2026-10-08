@@ -78,6 +78,9 @@ export const portfolioData = {
       github: "https://github.com/Asa790/skincare-recommendation-engine",
       demo: "https://github.com/Asa790/skincare-recommendation-engine",
       highlights: ["TF-IDF ingredient vectorization", "Cosine similarity product matching", "Custom Streamlit web interface"],
+      images: [
+        "/projects/skincare-matches-preview.png"
+      ],
       featured: true
     },
     {
