@@ -847,25 +847,23 @@ export default function App() {
             </div>
           </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))', gap: '24px' }}>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '28px' }}>
             {filteredProjects.map((proj) => (
-              <div key={proj.id} className="glass-card" style={{ 
-                padding: '30px', 
-                display: 'flex', 
-                flexDirection: 'column', 
-                justifyContent: 'space-between',
-                position: 'relative' 
+              <div key={proj.id} className="glass-card project-row-card hud-panel" style={{ 
+                position: 'relative',
+                overflow: 'hidden'
               }}>
+                <div className="hud-corner-tl" />
+                <div className="hud-corner-tr" />
+                <div className="hud-corner-bl" />
+                <div className="hud-corner-br" />
+
+                {/* Left Column: Visual Media & Thumbnails */}
                 <div>
-                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '16px' }}>
-                    <span style={{ 
-                      fontSize: '0.75rem', 
-                      letterSpacing: '0.1em', 
-                      textTransform: 'uppercase', 
-                      color: 'var(--crimson-accent)', 
-                      fontWeight: 700 
-                    }}>
-                      {proj.category}
+                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '12px' }}>
+                    <span className="hud-telemetry-pill">
+                      <span className="indicator-dot" />
+                      <span>{proj.category}</span>
                     </span>
                     <div style={{ display: 'flex', gap: '10px' }}>
                       <a href={proj.github} target="_blank" rel="noreferrer" style={{ color: 'var(--rose-gold)', transition: 'color 0.2s' }} title="GitHub Repo">
@@ -877,18 +875,14 @@ export default function App() {
                     </div>
                   </div>
 
-                  <h3 className="font-cinzel" style={{ fontSize: '1.4rem', color: '#fff', marginBottom: '12px' }}>
-                    {proj.title}
-                  </h3>
-
                   {proj.images && proj.images.length > 0 && (
-                    <div style={{ marginBottom: '20px' }}>
+                    <div>
                       <div 
                         onClick={() => setPreviewModalImage(proj.images[activeImageIndex[proj.id] || 0])}
                         style={{
                           position: 'relative',
                           width: '100%',
-                          height: '210px',
+                          height: '240px',
                           borderRadius: '14px',
                           overflow: 'hidden',
                           border: '1px solid rgba(230, 57, 86, 0.4)',
@@ -938,8 +932,8 @@ export default function App() {
                                 setActiveImageIndex(prev => ({ ...prev, [proj.id]: i }));
                               }}
                               style={{
-                                width: '56px',
-                                height: '36px',
+                                width: '64px',
+                                height: '40px',
                                 borderRadius: '6px',
                                 overflow: 'hidden',
                                 border: (activeImageIndex[proj.id] || 0) === i 
@@ -959,42 +953,67 @@ export default function App() {
                       )}
                     </div>
                   )}
+                </div>
 
-                  <p style={{ color: 'var(--text-muted)', fontSize: '0.94rem', lineHeight: '1.6', marginBottom: '20px' }}>
-                    {proj.description}
-                  </p>
+                {/* Right Column: Title, Description, Features & Actions */}
+                <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+                  <div>
+                    <h3 className="font-cinzel" style={{ fontSize: '1.5rem', color: '#fff', marginBottom: '12px' }}>
+                      {proj.title}
+                    </h3>
 
-                  <div style={{ marginBottom: '24px' }}>
-                    <div style={{ fontSize: '0.78rem', textTransform: 'uppercase', color: 'var(--rose-gold)', marginBottom: '8px', opacity: 0.8 }}>
-                      Key Features:
-                    </div>
-                    {proj.highlights.map((h, i) => (
-                      <div key={i} style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '0.85rem', color: '#ffeaed', marginBottom: '4px' }}>
-                        <CheckCircle2 size={13} color="#e63956" /> {h}
+                    <p style={{ color: 'var(--text-muted)', fontSize: '0.96rem', lineHeight: '1.65', marginBottom: '18px' }}>
+                      {proj.description}
+                    </p>
+
+                    <div style={{ marginBottom: '22px' }}>
+                      <div style={{ fontSize: '0.78rem', textTransform: 'uppercase', color: 'var(--rose-gold)', marginBottom: '8px', opacity: 0.8, letterSpacing: '0.08em' }}>
+                        Key Features &amp; Innovations:
                       </div>
-                    ))}
+                      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '6px' }}>
+                        {proj.highlights.map((h, i) => (
+                          <div key={i} style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '0.86rem', color: '#ffeaed' }}>
+                            <CheckCircle2 size={14} color="#e63956" /> {h}
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+
+                  <div>
+                    <div style={{ display: 'flex', flexWrap: 'wrap', gap: '7px', marginBottom: '18px' }}>
+                      {proj.tags.map((tag, i) => (
+                        <span key={i} className="glass-tag">
+                          #{tag}
+                        </span>
+                      ))}
+                    </div>
+
+                    <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap' }}>
+                      <a 
+                        href={proj.github} 
+                        target="_blank" 
+                        rel="noreferrer" 
+                        className="btn-outline" 
+                        style={{ padding: '10px 24px', fontSize: '0.88rem' }}
+                      >
+                        <GithubIcon size={16} /> Explore Repository
+                      </a>
+                      {proj.demo && (
+                        <a 
+                          href={proj.demo} 
+                          target="_blank" 
+                          rel="noreferrer" 
+                          className="btn-crimson" 
+                          style={{ padding: '10px 24px', fontSize: '0.88rem' }}
+                        >
+                          <ArrowUpRight size={16} /> Live Preview
+                        </a>
+                      )}
+                    </div>
                   </div>
                 </div>
 
-                <div>
-                  <div style={{ display: 'flex', flexWrap: 'wrap', gap: '7px', marginBottom: '18px' }}>
-                    {proj.tags.map((tag, i) => (
-                      <span key={i} className="glass-tag">
-                        #{tag}
-                      </span>
-                    ))}
-                  </div>
-
-                  <a 
-                    href={proj.github} 
-                    target="_blank" 
-                    rel="noreferrer" 
-                    className="btn-outline" 
-                    style={{ width: '100%', justifyContent: 'center', padding: '10px 0', fontSize: '0.88rem' }}
-                  >
-                    <GithubIcon size={16} /> Explore Repository
-                  </a>
-                </div>
               </div>
             ))}
           </div>

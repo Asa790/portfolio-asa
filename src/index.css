@@ -620,5 +620,26 @@ body::before {
   font-weight: 700;
 }
 
+/* =========================================================================
+   PROJECT ROW CARD (1 PROJECT PER ROW LAYOUT)
+   ========================================================================= */
+
+.project-row-card {
+  display: grid;
+  grid-template-columns: 460px 1fr;
+  gap: 36px;
+  align-items: stretch;
+  padding: 32px;
+}
+
+@media (max-width: 980px) {
+  .project-row-card {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    padding: 24px;
+  }
+}
+
+
 
 
