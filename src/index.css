@@ -382,3 +382,182 @@ body::before {
 ::-webkit-scrollbar-thumb:hover {
   background: #a81c33;
 }
+
+/* =========================================================================
+   TACTICAL CYBER-HUD & TELEMETRY STYLING (UMBRELLA / SCI-FI MIL-SPEC ACCENTS)
+   ========================================================================= */
+
+.font-mono-tech {
+  font-family: 'SF Mono', 'Fira Code', 'Roboto Mono', Consolas, monospace;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.12em;
+}
+
+.hud-panel {
+  position: relative;
+}
+
+.hud-panel::before,
+.hud-panel::after {
+  content: '';
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  pointer-events: none;
+  z-index: 5;
+  transition: all 0.3s ease;
+}
+
+.hud-panel::before {
+  top: -1px;
+  left: -1px;
+  border-top: 2px solid var(--crimson-accent);
+  border-left: 2px solid var(--crimson-accent);
+}
+
+.hud-panel::after {
+  bottom: -1px;
+  right: -1px;
+  border-bottom: 2px solid var(--crimson-accent);
+  border-right: 2px solid var(--crimson-accent);
+}
+
+.hud-bracket-box {
+  position: relative;
+}
+
+.hud-bracket-box::before,
+.hud-bracket-box::after {
+  content: '+';
+  position: absolute;
+  font-family: monospace;
+  font-size: 11px;
+  color: var(--crimson-accent);
+  opacity: 0.7;
+  pointer-events: none;
+  line-height: 1;
+}
+
+.hud-bracket-box::before {
+  top: 6px;
+  left: 8px;
+}
+
+.hud-bracket-box::after {
+  bottom: 6px;
+  right: 8px;
+}
+
+.hud-telemetry-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 3px 10px;
+  background: rgba(18, 5, 8, 0.75);
+  border: 1px solid rgba(230, 57, 86, 0.35);
+  border-radius: 4px;
+  font-family: 'SF Mono', Consolas, monospace;
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: #ff99aa;
+  box-shadow: 0 0 10px rgba(230, 57, 86, 0.12);
+}
+
+.hud-telemetry-pill .indicator-dot {
+  width: 6px;
+  height: 6px;
+  background-color: #ff2d55;
+  border-radius: 50%;
+  box-shadow: 0 0 8px #ff2d55;
+  animation: hudPulse 2s infinite ease-in-out;
+}
+
+@keyframes hudPulse {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.35;
+    transform: scale(0.8);
+  }
+}
+
+.hud-corner-tl,
+.hud-corner-tr,
+.hud-corner-bl,
+.hud-corner-br {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  pointer-events: none;
+  z-index: 4;
+}
+
+.hud-corner-tl {
+  top: 6px;
+  left: 6px;
+  border-top: 1.5px solid rgba(255, 141, 161, 0.8);
+  border-left: 1.5px solid rgba(255, 141, 161, 0.8);
+}
+
+.hud-corner-tr {
+  top: 6px;
+  right: 6px;
+  border-top: 1.5px solid rgba(255, 141, 161, 0.8);
+  border-right: 1.5px solid rgba(255, 141, 161, 0.8);
+}
+
+.hud-corner-bl {
+  bottom: 6px;
+  left: 6px;
+  border-bottom: 1.5px solid rgba(255, 141, 161, 0.8);
+  border-left: 1.5px solid rgba(255, 141, 161, 0.8);
+}
+
+.hud-corner-br {
+  bottom: 6px;
+  right: 6px;
+  border-bottom: 1.5px solid rgba(255, 141, 161, 0.8);
+  border-right: 1.5px solid rgba(255, 141, 161, 0.8);
+}
+
+.hud-scan-line {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, rgba(255, 77, 109, 0.7), transparent);
+  opacity: 0.45;
+  pointer-events: none;
+  animation: hudScan 4.5s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  z-index: 6;
+}
+
+@keyframes hudScan {
+  0% {
+    top: 0%;
+    opacity: 0;
+  }
+  15% {
+    opacity: 0.6;
+  }
+  85% {
+    opacity: 0.6;
+  }
+  100% {
+    top: 100%;
+    opacity: 0;
+  }
+}
+
+.hud-crosshair {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--crimson-accent);
+  opacity: 0.65;
+}
+

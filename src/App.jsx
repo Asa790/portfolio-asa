@@ -408,13 +408,18 @@ export default function App() {
             </div>
 
             <div style={{ position: 'relative' }}>
-              <div className="glass-card" style={{ 
+              <div className="glass-card hud-panel" style={{ 
                 padding: '30px', 
                 position: 'relative', 
                 overflow: 'hidden',
-                background: 'linear-gradient(145deg, rgba(38, 12, 18, 0.85) 0%, rgba(18, 5, 8, 0.95) 100%)',
-                border: '1px solid rgba(230, 57, 86, 0.3)'
+                background: 'linear-gradient(145deg, rgba(38, 12, 18, 0.88) 0%, rgba(18, 5, 8, 0.96) 100%)',
+                border: '1px solid rgba(230, 57, 86, 0.35)'
               }}>
+                <div className="hud-corner-tl" />
+                <div className="hud-corner-tr" />
+                <div className="hud-corner-bl" />
+                <div className="hud-corner-br" />
+                <div className="hud-scan-line" />
                 
                 <div style={{
                   position: 'absolute',
@@ -428,10 +433,20 @@ export default function App() {
                   filter: 'blur(30px)'
                 }} />
 
-                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '24px' }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '16px' }}>
+                  <div className="hud-telemetry-pill">
+                    <span className="indicator-dot" />
+                    <span>SYS // ONLINE</span>
+                  </div>
+                  <span className="font-mono-tech" style={{ fontSize: '0.68rem', color: 'var(--rose-gold)', opacity: 0.75, letterSpacing: '0.15em' }}>
+                    [ID: KR-2026.SYS]
+                  </span>
+                </div>
+
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '20px' }}>
                   <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                    <div style={{ width: '10px', height: '10px', borderRadius: '50%', background: '#22c55e', boxShadow: '0 0 10px #22c55e' }}></div>
-                    <span style={{ fontSize: '0.8rem', color: '#ffb3c1', letterSpacing: '0.08em', fontWeight: 600 }}>OPEN FOR INTERNSHIP</span>
+                    <div style={{ width: '8px', height: '8px', borderRadius: '50%', background: '#22c55e', boxShadow: '0 0 10px #22c55e' }}></div>
+                    <span style={{ fontSize: '0.78rem', color: '#ffb3c1', letterSpacing: '0.08em', fontWeight: 600 }}>OPEN FOR INTERNSHIP</span>
                   </div>
                   <span className="font-editorial" style={{ fontSize: '1.2rem', color: 'var(--rose-gold)', fontStyle: 'italic' }}>BINUS University</span>
                 </div>
