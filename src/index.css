@@ -489,38 +489,42 @@ body::before {
 .hud-corner-bl,
 .hud-corner-br {
   position: absolute;
-  width: 8px;
-  height: 8px;
+  width: 22px;
+  height: 22px;
   pointer-events: none;
   z-index: 4;
 }
 
 .hud-corner-tl {
-  top: 6px;
-  left: 6px;
-  border-top: 1.5px solid rgba(255, 141, 161, 0.8);
-  border-left: 1.5px solid rgba(255, 141, 161, 0.8);
+  top: 7px;
+  left: 7px;
+  border-top: 2px solid #ff4d6d;
+  border-left: 2px solid #ff4d6d;
+  border-top-left-radius: 14px;
 }
 
 .hud-corner-tr {
-  top: 6px;
-  right: 6px;
-  border-top: 1.5px solid rgba(255, 141, 161, 0.8);
-  border-right: 1.5px solid rgba(255, 141, 161, 0.8);
+  top: 7px;
+  right: 7px;
+  border-top: 2px solid #ff4d6d;
+  border-right: 2px solid #ff4d6d;
+  border-top-right-radius: 14px;
 }
 
 .hud-corner-bl {
-  bottom: 6px;
-  left: 6px;
-  border-bottom: 1.5px solid rgba(255, 141, 161, 0.8);
-  border-left: 1.5px solid rgba(255, 141, 161, 0.8);
+  bottom: 7px;
+  left: 7px;
+  border-bottom: 2px solid #ff4d6d;
+  border-left: 2px solid #ff4d6d;
+  border-bottom-left-radius: 14px;
 }
 
 .hud-corner-br {
-  bottom: 6px;
-  right: 6px;
-  border-bottom: 1.5px solid rgba(255, 141, 161, 0.8);
-  border-right: 1.5px solid rgba(255, 141, 161, 0.8);
+  bottom: 7px;
+  right: 7px;
+  border-bottom: 2px solid #ff4d6d;
+  border-right: 2px solid #ff4d6d;
+  border-bottom-right-radius: 14px;
 }
 
 .hud-scan-line {
@@ -560,4 +564,52 @@ body::before {
   color: var(--crimson-accent);
   opacity: 0.65;
 }
+
+/* Umbrella Corporation HUD Elements */
+.umbrella-logo-icon {
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  position: relative;
+  border-radius: 50%;
+  background: conic-gradient(
+    #ffffff 0deg 45deg,
+    #d90429 45deg 90deg,
+    #ffffff 90deg 135deg,
+    #d90429 135deg 180deg,
+    #ffffff 180deg 225deg,
+    #d90429 225deg 270deg,
+    #ffffff 270deg 315deg,
+    #d90429 315deg 360deg
+  );
+  box-shadow: 0 0 10px rgba(217, 4, 41, 0.5);
+  flex-shrink: 0;
+}
+
+.umbrella-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 12px;
+  background: rgba(20, 4, 8, 0.85);
+  border: 1px solid rgba(220, 20, 60, 0.4);
+  border-radius: 6px;
+  font-family: 'SF Mono', Consolas, monospace;
+  font-size: 0.68rem;
+  letter-spacing: 0.16em;
+  color: #ffb3c1;
+  text-transform: uppercase;
+  box-shadow: 0 0 14px rgba(220, 20, 60, 0.18), inset 0 0 8px rgba(220, 20, 60, 0.1);
+}
+
+.hud-cross-decor {
+  position: absolute;
+  color: rgba(255, 77, 109, 0.35);
+  font-family: monospace;
+  font-size: 11px;
+  line-height: 1;
+  pointer-events: none;
+  user-select: none;
+}
+
 

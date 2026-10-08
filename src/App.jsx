@@ -321,8 +321,12 @@ export default function App() {
           <div className="hero-grid">
             
             <div>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '20px' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '20px', flexWrap: 'wrap' }}>
                 <span className="badge-glow">Portfolio 2026</span>
+                <span className="hud-telemetry-pill" style={{ padding: '4px 10px' }}>
+                  <span className="indicator-dot" />
+                  <span>SE // AI PROTOCOL</span>
+                </span>
                 <span style={{ color: 'var(--rose-gold)', fontSize: '0.85rem', display: 'flex', alignItems: 'center', gap: '6px' }}>
                   <MapPin size={14} color="#e63956" /> {personal.location}
                 </span>
@@ -420,6 +424,10 @@ export default function App() {
                 <div className="hud-corner-bl" />
                 <div className="hud-corner-br" />
                 <div className="hud-scan-line" />
+                <span className="hud-cross-decor" style={{ top: '24px', left: '20px' }}>+</span>
+                <span className="hud-cross-decor" style={{ top: '24px', right: '20px' }}>+</span>
+                <span className="hud-cross-decor" style={{ bottom: '24px', left: '20px' }}>+</span>
+                <span className="hud-cross-decor" style={{ bottom: '24px', right: '20px' }}>+</span>
                 
                 <div style={{
                   position: 'absolute',
@@ -433,14 +441,15 @@ export default function App() {
                   filter: 'blur(30px)'
                 }} />
 
-                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '16px' }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '16px', flexWrap: 'wrap', gap: '8px' }}>
+                  <div className="umbrella-badge">
+                    <span className="umbrella-logo-icon" />
+                    <span>UMBRELLA CORP // DIV.08</span>
+                  </div>
                   <div className="hud-telemetry-pill">
                     <span className="indicator-dot" />
-                    <span>SYS // ONLINE</span>
+                    <span>SYS: OPTIMAL</span>
                   </div>
-                  <span className="font-mono-tech" style={{ fontSize: '0.68rem', color: 'var(--rose-gold)', opacity: 0.75, letterSpacing: '0.15em' }}>
-                    [ID: KR-2026.SYS]
-                  </span>
                 </div>
 
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '20px' }}>
