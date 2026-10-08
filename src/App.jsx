@@ -848,34 +848,130 @@ export default function App() {
           </div>
 
           <div style={{ display: 'flex', flexDirection: 'column', gap: '28px' }}>
-            {filteredProjects.map((proj) => (
-              <div key={proj.id} className="glass-card project-row-card hud-panel" style={{ 
-                position: 'relative',
-                overflow: 'hidden'
-              }}>
-                <div className="hud-corner-tl" />
-                <div className="hud-corner-tr" />
-                <div className="hud-corner-bl" />
-                <div className="hud-corner-br" />
+            {filteredProjects.map((proj) => {
+              const hasImages = proj.images && proj.images.length > 0;
 
-                {/* Left Column: Visual Media & Thumbnails */}
-                <div>
-                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '12px' }}>
-                    <span className="hud-telemetry-pill">
-                      <span className="indicator-dot" />
-                      <span>{proj.category}</span>
-                    </span>
-                    <div style={{ display: 'flex', gap: '10px' }}>
-                      <a href={proj.github} target="_blank" rel="noreferrer" style={{ color: 'var(--rose-gold)', transition: 'color 0.2s' }} title="GitHub Repo">
-                        <GithubIcon size={18} />
-                      </a>
-                      <a href={proj.demo} target="_blank" rel="noreferrer" style={{ color: 'var(--rose-gold)', transition: 'color 0.2s' }} title="Live Preview">
-                        <ArrowUpRight size={18} />
-                      </a>
+              if (!hasImages) {
+                return (
+                  <div key={proj.id} className="glass-card project-row-card-text-only hud-panel" style={{ 
+                    position: 'relative',
+                    overflow: 'hidden'
+                  }}>
+                    <div className="hud-corner-tl" />
+                    <div className="hud-corner-tr" />
+                    <div className="hud-corner-bl" />
+                    <div className="hud-corner-br" />
+
+                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '12px' }}>
+                      <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+                        <span className="hud-telemetry-pill">
+                          <span className="indicator-dot" />
+                          <span>{proj.category}</span>
+                        </span>
+                        <span className="font-mono-tech" style={{ fontSize: '0.68rem', color: 'var(--rose-gold)', opacity: 0.75 }}>
+                          [SRC // REPO]
+                        </span>
+                      </div>
+                      <div style={{ display: 'flex', gap: '12px', alignItems: 'center' }}>
+                        <a href={proj.github} target="_blank" rel="noreferrer" style={{ color: 'var(--rose-gold)', display: 'inline-flex', alignItems: 'center', gap: '6px', fontSize: '0.85rem', textDecoration: 'none' }} title="GitHub Repo">
+                          <GithubIcon size={18} />
+                          <span>Code</span>
+                        </a>
+                        {proj.demo && (
+                          <a href={proj.demo} target="_blank" rel="noreferrer" style={{ color: 'var(--rose-gold)', display: 'inline-flex', alignItems: 'center', gap: '4px', fontSize: '0.85rem', textDecoration: 'none' }} title="Live Preview">
+                            <ArrowUpRight size={18} />
+                            <span>Live</span>
+                          </a>
+                        )}
+                      </div>
+                    </div>
+
+                    <div>
+                      <h3 className="font-cinzel" style={{ fontSize: '1.5rem', color: '#fff', marginBottom: '10px' }}>
+                        {proj.title}
+                      </h3>
+
+                      <p style={{ color: 'var(--text-muted)', fontSize: '0.96rem', lineHeight: '1.65', marginBottom: '16px' }}>
+                        {proj.description}
+                      </p>
+
+                      <div style={{ marginBottom: '20px' }}>
+                        <div style={{ fontSize: '0.78rem', textTransform: 'uppercase', color: 'var(--rose-gold)', marginBottom: '8px', opacity: 0.8, letterSpacing: '0.08em' }}>
+                          Key Features &amp; Innovations:
+                        </div>
+                        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '8px' }}>
+                          {proj.highlights.map((h, i) => (
+                            <div key={i} style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '0.86rem', color: '#ffeaed' }}>
+                              <CheckCircle2 size={14} color="#e63956" /> {h}
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+
+                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '16px', borderTop: '1px solid rgba(244, 194, 194, 0.12)', paddingTop: '16px' }}>
+                      <div style={{ display: 'flex', flexWrap: 'wrap', gap: '7px' }}>
+                        {proj.tags.map((tag, i) => (
+                          <span key={i} className="glass-tag">
+                            #{tag}
+                          </span>
+                        ))}
+                      </div>
+
+                      <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap' }}>
+                        <a 
+                          href={proj.github} 
+                          target="_blank" 
+                          rel="noreferrer" 
+                          className="btn-outline" 
+                          style={{ padding: '8px 22px', fontSize: '0.85rem' }}
+                        >
+                          <GithubIcon size={16} /> Explore Repository
+                        </a>
+                        {proj.demo && (
+                          <a 
+                            href={proj.demo} 
+                            target="_blank" 
+                            rel="noreferrer" 
+                            className="btn-crimson" 
+                            style={{ padding: '8px 22px', fontSize: '0.85rem' }}
+                          >
+                            <ArrowUpRight size={16} /> Live Preview
+                          </a>
+                        )}
+                      </div>
                     </div>
                   </div>
+                );
+              }
 
-                  {proj.images && proj.images.length > 0 && (
+              return (
+                <div key={proj.id} className="glass-card project-row-card hud-panel" style={{ 
+                  position: 'relative',
+                  overflow: 'hidden'
+                }}>
+                  <div className="hud-corner-tl" />
+                  <div className="hud-corner-tr" />
+                  <div className="hud-corner-bl" />
+                  <div className="hud-corner-br" />
+
+                  {/* Left Column: Visual Media & Thumbnails */}
+                  <div>
+                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '12px' }}>
+                      <span className="hud-telemetry-pill">
+                        <span className="indicator-dot" />
+                        <span>{proj.category}</span>
+                      </span>
+                      <div style={{ display: 'flex', gap: '10px' }}>
+                        <a href={proj.github} target="_blank" rel="noreferrer" style={{ color: 'var(--rose-gold)', transition: 'color 0.2s' }} title="GitHub Repo">
+                          <GithubIcon size={18} />
+                        </a>
+                        <a href={proj.demo} target="_blank" rel="noreferrer" style={{ color: 'var(--rose-gold)', transition: 'color 0.2s' }} title="Live Preview">
+                          <ArrowUpRight size={18} />
+                        </a>
+                      </div>
+                    </div>
+
                     <div>
                       <div 
                         onClick={() => setPreviewModalImage(proj.images[activeImageIndex[proj.id] || 0])}
@@ -952,70 +1048,70 @@ export default function App() {
                         </div>
                       )}
                     </div>
-                  )}
-                </div>
+                  </div>
 
-                {/* Right Column: Title, Description, Features & Actions */}
-                <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
-                  <div>
-                    <h3 className="font-cinzel" style={{ fontSize: '1.5rem', color: '#fff', marginBottom: '12px' }}>
-                      {proj.title}
-                    </h3>
+                  {/* Right Column: Title, Description, Features & Actions */}
+                  <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+                    <div>
+                      <h3 className="font-cinzel" style={{ fontSize: '1.5rem', color: '#fff', marginBottom: '12px' }}>
+                        {proj.title}
+                      </h3>
 
-                    <p style={{ color: 'var(--text-muted)', fontSize: '0.96rem', lineHeight: '1.65', marginBottom: '18px' }}>
-                      {proj.description}
-                    </p>
+                      <p style={{ color: 'var(--text-muted)', fontSize: '0.96rem', lineHeight: '1.65', marginBottom: '18px' }}>
+                        {proj.description}
+                      </p>
 
-                    <div style={{ marginBottom: '22px' }}>
-                      <div style={{ fontSize: '0.78rem', textTransform: 'uppercase', color: 'var(--rose-gold)', marginBottom: '8px', opacity: 0.8, letterSpacing: '0.08em' }}>
-                        Key Features &amp; Innovations:
+                      <div style={{ marginBottom: '22px' }}>
+                        <div style={{ fontSize: '0.78rem', textTransform: 'uppercase', color: 'var(--rose-gold)', marginBottom: '8px', opacity: 0.8, letterSpacing: '0.08em' }}>
+                          Key Features &amp; Innovations:
+                        </div>
+                        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '6px' }}>
+                          {proj.highlights.map((h, i) => (
+                            <div key={i} style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '0.86rem', color: '#ffeaed' }}>
+                              <CheckCircle2 size={14} color="#e63956" /> {h}
+                            </div>
+                          ))}
+                        </div>
                       </div>
-                      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '6px' }}>
-                        {proj.highlights.map((h, i) => (
-                          <div key={i} style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '0.86rem', color: '#ffeaed' }}>
-                            <CheckCircle2 size={14} color="#e63956" /> {h}
-                          </div>
+                    </div>
+
+                    <div>
+                      <div style={{ display: 'flex', flexWrap: 'wrap', gap: '7px', marginBottom: '18px' }}>
+                        {proj.tags.map((tag, i) => (
+                          <span key={i} className="glass-tag">
+                            #{tag}
+                          </span>
                         ))}
                       </div>
-                    </div>
-                  </div>
 
-                  <div>
-                    <div style={{ display: 'flex', flexWrap: 'wrap', gap: '7px', marginBottom: '18px' }}>
-                      {proj.tags.map((tag, i) => (
-                        <span key={i} className="glass-tag">
-                          #{tag}
-                        </span>
-                      ))}
-                    </div>
-
-                    <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap' }}>
-                      <a 
-                        href={proj.github} 
-                        target="_blank" 
-                        rel="noreferrer" 
-                        className="btn-outline" 
-                        style={{ padding: '10px 24px', fontSize: '0.88rem' }}
-                      >
-                        <GithubIcon size={16} /> Explore Repository
-                      </a>
-                      {proj.demo && (
+                      <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap' }}>
                         <a 
-                          href={proj.demo} 
+                          href={proj.github} 
                           target="_blank" 
                           rel="noreferrer" 
-                          className="btn-crimson" 
+                          className="btn-outline" 
                           style={{ padding: '10px 24px', fontSize: '0.88rem' }}
                         >
-                          <ArrowUpRight size={16} /> Live Preview
+                          <GithubIcon size={16} /> Explore Repository
                         </a>
-                      )}
+                        {proj.demo && (
+                          <a 
+                            href={proj.demo} 
+                            target="_blank" 
+                            rel="noreferrer" 
+                            className="btn-crimson" 
+                            style={{ padding: '10px 24px', fontSize: '0.88rem' }}
+                          >
+                            <ArrowUpRight size={16} /> Live Preview
+                          </a>
+                        )}
+                      </div>
                     </div>
                   </div>
-                </div>
 
-              </div>
-            ))}
+                </div>
+              );
+            })}
           </div>
 
           <div className="glass-card" style={{ 
