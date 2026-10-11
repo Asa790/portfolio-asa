@@ -169,25 +169,6 @@ export const portfolioData = {
       demo: "https://github.com/Asa790/Spam-Detection-ml",
       highlights: ["Text feature extraction", "Supervised classification model", "High precision spam filtering"],
       featured: false
-    },
-    {
-      id: "portfolio-web",
-      title: "Personal Cybernetic Portfolio Website",
-      category: "Web & Cybernetic HUD Experience",
-      description: "Personal engineering portfolio showcasing software engineering, AI/ML initiatives, organizational track records, and formal credentials. Styled in a dark crimson luxury theme featuring cyber-tactical HUD telemetry and responsive glassmorphism.",
-      tags: ["React", "Vite", "JavaScript", "CSS3", "Glassmorphism", "HUD UI"],
-      github: "https://github.com/Asa790/portfolio-asa",
-      demo: "https://portfolio-asa.vercel.app",
-      highlights: [
-        "Sci-fi HUD telemetry framing with scanline sweeps and precision reticles",
-        "Interactive project gallery with enlarged lightbox modals",
-        "Form submission pipeline via Web3Forms and mailto fallback",
-        "Fully responsive luxury dark-crimson glassmorphism interface"
-      ],
-      images: [
-        "/projects/portfolio-preview.png"
-      ],
-      featured: true
     }
   ],
 
