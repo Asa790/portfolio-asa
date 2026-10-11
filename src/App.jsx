@@ -980,15 +980,12 @@ export default function App() {
                         style={{
                           position: 'relative',
                           width: '100%',
-                          height: '260px',
+                          height: '240px',
                           borderRadius: '14px',
                           overflow: 'hidden',
                           border: '1px solid rgba(230, 57, 86, 0.4)',
                           cursor: 'pointer',
-                          background: '#150508',
-                          display: 'flex',
-                          alignItems: 'center',
-                          justifyContent: 'center'
+                          background: '#150508'
                         }}
                       >
                         <img 
@@ -997,11 +994,11 @@ export default function App() {
                           style={{
                             width: '100%',
                             height: '100%',
-                            objectFit: proj.id === 'sharecare-prototype' ? 'contain' : 'cover',
+                            objectFit: 'cover',
                             objectPosition: proj.id === 'fuelwise' ? 'center 10%' : 'center top',
                             transition: 'transform 0.4s ease'
                           }}
-                          onMouseEnter={e => e.currentTarget.style.transform = 'scale(1.03)'}
+                          onMouseEnter={e => e.currentTarget.style.transform = 'scale(1.05)'}
                           onMouseLeave={e => e.currentTarget.style.transform = 'scale(1)'}
                         />
                         <div style={{
