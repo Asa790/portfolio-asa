@@ -84,6 +84,12 @@ export const portfolioData = {
         "Event detail view with targets, progress metrics, and organizer verification",
         "Care points reward tracking, digital wallet, and certificate shortcuts"
       ],
+      images: [
+        "/projects/sharecare-home.jpg",
+        "/projects/sharecare-search.jpg",
+        "/projects/sharecare-notifications.jpg",
+        "/projects/sharecare-profile.jpg"
+      ],
       featured: true
     },
     {
