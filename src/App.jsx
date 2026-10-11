@@ -69,7 +69,9 @@ const techLogos = {
   devc: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg",
   cisco: "https://upload.wikimedia.org/wikipedia/commons/0/08/Cisco_logo_blue_2016.svg",
   postman: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postman/postman-original.svg",
-  xampp: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/apache/apache-original.svg"
+  xampp: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/apache/apache-original.svg",
+  reactnative: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
+  mysql: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg"
 };
 
 const TechLogo = ({ name, size = 22 }) => {
@@ -825,7 +827,7 @@ export default function App() {
             </div>
 
             <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap' }}>
-              {['all', 'Machine Learning', 'Python', 'Streamlit', 'HCI'].map(category => (
+              {['all', 'React Native', 'Machine Learning', 'Python', 'Streamlit', 'HCI'].map(category => (
                 <button
                   key={category}
                   onClick={() => setActiveTab(category)}

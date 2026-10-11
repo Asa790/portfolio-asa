@@ -26,9 +26,11 @@ export const portfolioData = {
       { name: "JavaScript", icon: "javascript", category: "Programming Languages" },
       { name: "TypeScript", icon: "typescript", category: "Programming Languages" },
       { name: "React", icon: "react", category: "Web & Frontend" },
+      { name: "React Native", icon: "reactnative", category: "Web & Frontend" },
       { name: "HTML5 / CSS3", icon: "html5", category: "Web & Frontend" },
       { name: "FastAPI", icon: "fastapi", category: "Backend & API" },
       { name: "Postman", icon: "postman", category: "Backend & API" },
+      { name: "MySQL", icon: "mysql", category: "Database & Backend" },
       { name: "SQLite", icon: "sqlite", category: "Database & Backend" },
       { name: "XAMPP", icon: "xampp", category: "Database & Backend" },
       { name: "PyTorch", icon: "pytorch", category: "AI & Machine Learning" },
@@ -69,6 +71,21 @@ export const portfolioData = {
   },
 
   projects: [
+    {
+      id: "sharecare-prototype",
+      title: "ShareCare Volunteering & Donation Mobile App",
+      category: "Mobile App & Social Tech",
+      description: "A mobile application prototype designed for digital volunteering and social donations. Built with React Native and Expo, providing an accessible, community-driven interface connecting volunteers and donors with verified social initiatives.",
+      tags: ["React Native", "Expo", "TypeScript", "Mobile App", "UI/UX"],
+      github: "https://github.com/Asa790/sharecare-prototype",
+      demo: "https://sharecare-prototype.vercel.app",
+      highlights: [
+        "Interactive campaign discovery with emergency spotlight hero banners",
+        "Event detail view with targets, progress metrics, and organizer verification",
+        "Care points reward tracking, digital wallet, and certificate shortcuts"
+      ],
+      featured: true
+    },
     {
       id: "skincare-recommendation-engine",
       title: "Skincare Recommendation Engine",
