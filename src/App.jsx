@@ -71,11 +71,23 @@ const techLogos = {
   postman: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postman/postman-original.svg",
   xampp: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/apache/apache-original.svg",
   reactnative: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
-  mysql: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg"
+  mysql: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg",
+  postgresql: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg",
+  psql: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg",
+  katalon: "https://upload.wikimedia.org/wikipedia/commons/e/e0/Katalon_Studio_logo.svg"
 };
 
 const TechLogo = ({ name, size = 22 }) => {
   const lower = name.toLowerCase();
+
+  if (lower === 'katalon' || lower.includes('katalon')) {
+    return (
+      <svg width={size} height={size} viewBox="0 0 24 24" fill="none">
+        <rect width="24" height="24" rx="5" fill="#1b1c24" />
+        <path d="M7 5V19M7 12L16 5M10.5 10.5L17 19" stroke="#2ac382" strokeWidth="2.8" strokeLinecap="round" strokeLinejoin="round" />
+      </svg>
+    );
+  }
 
   if (lower === 'cisco' || lower === 'ciscopackettracer') {
     return (
