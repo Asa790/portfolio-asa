@@ -406,7 +406,7 @@ export default function App() {
         )}
       </header>
 
-      <section style={{ padding: '50px 0 60px', position: 'relative' }}>
+      <section id="about" style={{ padding: '50px 0 60px', position: 'relative' }}>
         <div className="container">
           <div className="hero-grid">
             
