@@ -341,6 +341,24 @@ export const portfolioData = {
         image: "/ibm-cloud-certif.png",
         credentialUrl: "https://courses.cognitiveclass.ai/certificates/1646075afd4f47389d5affde932123ae",
         description: "Certified by IBM Developer Skills Network on fundamental Cloud Computing concepts, deployment models, cloud architecture, and modern infrastructure services."
+      },
+      {
+        title: "SQL and Relational Databases 101",
+        issuer: "IBM Skills Network & Cognitive Class",
+        courseCode: "DB0101EN",
+        date: "October 16, 2026",
+        image: "/ibm-sql-relational-databases-101-certif.png",
+        credentialUrl: "https://courses.cognitiveclass.ai/certificates/ad79284adaf84dd4b793b461a96cf651",
+        description: "Certified by IBM Skills Network covering relational database fundamentals, SQL syntax, table schemas, queries, aggregation, and database management principles."
+      },
+      {
+        title: "Data Science 101",
+        issuer: "IBM & Cognitive Class",
+        courseCode: "DS0101EN",
+        date: "October 16, 2026",
+        image: "/ibm-data-science-101-certif.png",
+        credentialUrl: "https://courses.cognitiveclass.ai/certificates/d78838f9cbf641dc946b9782e55e6817",
+        description: "Certified by IBM Developer Skills Network covering core data science methodologies, exploratory data analysis, machine learning foundations, and real-world analytics workflows."
       }
     ]
   }
