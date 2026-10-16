@@ -74,7 +74,9 @@ const techLogos = {
   mysql: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg",
   postgresql: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg",
   psql: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg",
-  katalon: "https://upload.wikimedia.org/wikipedia/commons/e/e0/Katalon_Studio_logo.svg"
+  katalon: "https://upload.wikimedia.org/wikipedia/commons/e/e0/Katalon_Studio_logo.svg",
+  expo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/expo/expo-original.svg",
+  androidstudio: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/androidstudio/androidstudio-original.svg"
 };
 
 const TechLogo = ({ name, size = 22 }) => {
