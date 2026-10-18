@@ -36,6 +36,7 @@ export const portfolioData = {
       { name: "SQLite", icon: "sqlite", category: "Database & Backend" },
       { name: "XAMPP", icon: "xampp", category: "Database & Backend" },
       { name: "Katalon Studio", icon: "katalon", category: "Testing & QA" },
+      { name: "Selenium Java", icon: "selenium", category: "Testing & QA" },
       { name: "PyTorch", icon: "pytorch", category: "AI & Machine Learning" },
       { name: "Hugging Face", icon: "huggingface", category: "AI & Machine Learning" },
       { name: "Scikit-Learn", icon: "scikitlearn", category: "AI & Machine Learning" },
