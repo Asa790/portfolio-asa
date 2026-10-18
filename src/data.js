@@ -146,6 +146,9 @@ export const portfolioData = {
       github: "https://github.com/Asa790/overwrite-app",
       demo: "https://overwrite-app.onrender.com",
       highlights: ["Glassmorphism aesthetic UI", "Local SQLite database persistence", "Interactive emotional memory releasing flow"],
+      images: [
+        "/projects/overwrite-preview-1.png"
+      ],
       featured: true
     },
     {
