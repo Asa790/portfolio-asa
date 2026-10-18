@@ -1172,7 +1172,7 @@ export default function App() {
 
           <div style={{ display: 'flex', flexDirection: 'column', gap: '20px', maxWidth: '900px', margin: '0 auto' }}>
             {filteredExp.map((exp, idx) => (
-              <div key={idx} className="glass-card" style={{ padding: '28px', borderLeft: '4px solid var(--crimson-accent)' }}>
+              <div key={idx} className="glass-card" style={{ padding: '28px' }}>
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', flexWrap: 'wrap', gap: '10px', marginBottom: '8px' }}>
                   <div>
                     <h3 className="font-cinzel" style={{ fontSize: '1.25rem', color: '#fff' }}>
@@ -1440,7 +1440,7 @@ export default function App() {
                             </span>
                           </div>
                           <p style={{ color: 'var(--rose-gold)', fontSize: '0.88rem', fontWeight: 600, margin: 0 }}>
-                            Issued by {cert.issuer} &bull; {cert.date}
+                            Issued by {cert.issuer}
                           </p>
                           <p style={{ color: 'var(--text-muted)', fontSize: '0.84rem', marginTop: '6px', lineHeight: '1.5', maxWidth: '680px' }}>
                             {cert.description}
