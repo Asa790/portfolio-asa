@@ -703,88 +703,178 @@ export default function App() {
               </h3>
             </div>
 
-            {/* Grouped Skills by Distinct Category */}
+            {/* Diversified Skills Layout: Primary Bento Highlights + Compact Categorized Cloud */}
             {(() => {
-              const categories = [...new Set(skills.hardSkills.map(s => s.category))];
-              return (
-                <div style={{ display: 'flex', flexDirection: 'column', gap: '30px' }}>
-                  {categories.map((cat, catIdx) => {
-                    const items = skills.hardSkills.filter(s => s.category === cat);
-                    return (
-                      <div key={catIdx} style={{
-                        background: 'linear-gradient(135deg, rgba(32, 10, 16, 0.45) 0%, rgba(15, 4, 7, 0.6) 100%)',
-                        border: '1px solid rgba(244, 194, 194, 0.12)',
-                        borderTop: '1px solid rgba(255, 255, 255, 0.18)',
-                        borderRadius: '16px',
-                        padding: '20px 22px'
-                      }}>
-                        <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '16px' }}>
-                          <span style={{
-                            width: '8px',
-                            height: '8px',
-                            borderRadius: '50%',
-                            background: 'var(--crimson-accent)',
-                            boxShadow: '0 0 8px var(--crimson-accent)'
-                          }} />
-                          <h4 style={{
-                            color: '#fff',
-                            fontSize: '0.98rem',
-                            fontWeight: 600,
-                            letterSpacing: '0.04em',
-                            textTransform: 'uppercase',
-                            fontFamily: "'Cinzel', serif"
-                          }}>
-                            {cat}
-                          </h4>
-                          <span style={{ fontSize: '0.72rem', color: 'var(--rose-gold)', opacity: 0.7 }}>
-                            ({items.length})
-                          </span>
-                        </div>
+              // 1. Primary Highlight Proficiencies (Bento Cards with context & usage)
+              const primaryHighlights = [
+                {
+                  name: "Python",
+                  icon: "python",
+                  category: "Core & AI",
+                  role: "Primary Language",
+                  desc: "Core driver for machine learning models, FastAPI endpoints, data analytics, and automation scripts."
+                },
+                {
+                  name: "React & Native",
+                  icon: "react",
+                  category: "Frontend & Mobile",
+                  role: "UI Architecture",
+                  desc: "Modern reactive user interfaces, cross-platform mobile apps (Expo Go), and responsive web design."
+                },
+                {
+                  name: "FastAPI & REST",
+                  icon: "fastapi",
+                  category: "Backend & Services",
+                  role: "High-Performance APIs",
+                  desc: "Scalable backend services, async endpoints, schema validation with Pydantic, and Postman testing."
+                },
+                {
+                  name: "SQL Databases",
+                  icon: "postgresql",
+                  category: "Data Persistence",
+                  role: "Relational Modeling",
+                  desc: "PostgreSQL, MySQL, SQLite schema design, queries, transactions, and relational data integrity."
+                },
+                {
+                  name: "AI & ML Stack",
+                  icon: "pytorch",
+                  category: "Intelligent Systems",
+                  role: "Deep Learning & NLP",
+                  desc: "PyTorch neural architectures, Hugging Face transformers, and Scikit-Learn predictive modeling."
+                },
+                {
+                  name: "Testing & QA",
+                  icon: "selenium",
+                  category: "Quality Assurance",
+                  role: "Automated Testing",
+                  desc: "Selenium Java web automation suites, cross-browser test flows, and Katalon Studio integration."
+                }
+              ];
 
-                        <div style={{ 
-                          display: 'grid', 
-                          gridTemplateColumns: 'repeat(auto-fill, minmax(185px, 1fr))', 
-                          gap: '12px' 
-                        }}>
-                          {items.map((tech, idx) => (
-                            <div 
-                              key={idx} 
-                              className="glass-card" 
-                              style={{ 
-                                padding: '14px 16px', 
-                                display: 'flex', 
-                                alignItems: 'center', 
-                                gap: '12px',
-                                transition: 'all 0.25s ease'
-                              }}
-                            >
-                              <div style={{
-                                width: '36px',
-                                height: '36px',
-                                borderRadius: '10px',
-                                background: 'rgba(255, 255, 255, 0.05)',
-                                border: '1px solid rgba(244, 194, 194, 0.18)',
-                                display: 'flex',
-                                alignItems: 'center',
-                                justifyContent: 'center',
-                                flexShrink: 0
-                              }}>
-                                <TechLogo name={tech.icon} size={22} />
-                              </div>
-                              <div style={{ overflow: 'hidden' }}>
-                                <div style={{ fontSize: '0.92rem', fontWeight: 600, color: '#fff', whiteSpace: 'nowrap', textOverflow: 'ellipsis', overflow: 'hidden' }}>
-                                  {tech.name}
-                                </div>
-                                <div style={{ fontSize: '0.72rem', color: 'var(--crimson-accent)', textTransform: 'uppercase', letterSpacing: '0.04em' }}>
-                                  {tech.category}
-                                </div>
-                              </div>
+              const highlightNames = new Set(primaryHighlights.map(p => p.name.toLowerCase()));
+              // Also map shorthand names to avoid duplicate visual noise
+              const isHighlight = (name) => {
+                const n = name.toLowerCase();
+                return n === 'python' || n === 'react' || n === 'react native' || n === 'fastapi' || n === 'postgresql' || n === 'pytorch' || n === 'selenium java';
+              };
+
+              // Group all auxiliary tools cleanly by category
+              const categories = [...new Set(skills.hardSkills.map(s => s.category))];
+
+              return (
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '36px' }}>
+                  
+                  {/* Primary Proficiencies Bento Grid */}
+                  <div>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '18px' }}>
+                      <span className="hud-telemetry-pill">
+                        <span className="indicator-dot" />
+                        <span>CORE PROFICIENCIES // BENTO</span>
+                      </span>
+                    </div>
+
+                    <div className="skill-bento-grid">
+                      {primaryHighlights.map((item, idx) => (
+                        <div key={idx} className="glass-card skill-bento-card">
+                          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '16px' }}>
+                            <div className="skill-icon-wrap" style={{ width: '48px', height: '48px', borderRadius: '14px' }}>
+                              <TechLogo name={item.icon} size={28} />
                             </div>
-                          ))}
+                            <span className="glass-tag" style={{ fontSize: '0.68rem', padding: '3px 8px' }}>
+                              {item.role}
+                            </span>
+                          </div>
+
+                          <div>
+                            <h4 className="font-cinzel" style={{ fontSize: '1.15rem', color: '#fff', fontWeight: 600, marginBottom: '6px' }}>
+                              {item.name}
+                            </h4>
+                            <p style={{ color: 'var(--text-muted)', fontSize: '0.84rem', lineHeight: '1.55', margin: 0 }}>
+                              {item.desc}
+                            </p>
+                          </div>
                         </div>
-                      </div>
-                    );
-                  })}
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Auxiliary & Comprehensive Tool Ecosystem: Clean Categorized Cloud without Redundant Sub-labels */}
+                  <div>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '20px' }}>
+                      <span className="hud-telemetry-pill">
+                        <span className="indicator-dot" style={{ background: '#38bdf8', boxShadow: '0 0 8px #38bdf8' }} />
+                        <span>COMPREHENSIVE TOOLKIT &amp; ECOSYSTEM</span>
+                      </span>
+                    </div>
+
+                    <div style={{
+                      display: 'grid',
+                      gridTemplateColumns: 'repeat(auto-fit, minmax(310px, 1fr))',
+                      gap: '18px'
+                    }}>
+                      {categories.map((cat, catIdx) => {
+                        const items = skills.hardSkills.filter(s => s.category === cat);
+                        return (
+                          <div key={catIdx} style={{
+                            background: 'linear-gradient(145deg, rgba(255, 255, 255, 0.02) 0%, rgba(20, 5, 8, 0.55) 100%)',
+                            border: '1px solid rgba(255, 255, 255, 0.07)',
+                            borderTop: '1px solid rgba(255, 255, 255, 0.15)',
+                            borderRadius: '16px',
+                            padding: '18px 20px',
+                            display: 'flex',
+                            flexDirection: 'column',
+                            justifyContent: 'space-between',
+                            gap: '14px'
+                          }}>
+                            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+                              <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                                <span style={{
+                                  width: '6px',
+                                  height: '6px',
+                                  borderRadius: '50%',
+                                  background: 'var(--crimson-accent)',
+                                  boxShadow: '0 0 6px var(--crimson-accent)'
+                                }} />
+                                <h4 style={{
+                                  color: '#fff',
+                                  fontSize: '0.88rem',
+                                  fontWeight: 600,
+                                  letterSpacing: '0.04em',
+                                  textTransform: 'uppercase',
+                                  fontFamily: "'Cinzel', serif",
+                                  margin: 0
+                                }}>
+                                  {cat}
+                                </h4>
+                              </div>
+                              <span style={{ fontSize: '0.7rem', color: 'var(--rose-gold)', opacity: 0.7 }}>
+                                {items.length} tools
+                              </span>
+                            </div>
+
+                            {/* Compact Pills - NO redundant category labels, only Logo + Tech Name */}
+                            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
+                              {items.map((tech, idx) => (
+                                <div 
+                                  key={idx} 
+                                  className="skill-compact-pill"
+                                  title={tech.name}
+                                >
+                                  <div className="skill-icon-wrap" style={{ width: '24px', height: '24px', borderRadius: '6px', border: 'none', background: 'transparent' }}>
+                                    <TechLogo name={tech.icon} size={16} />
+                                  </div>
+                                  <span style={{ fontSize: '0.82rem', fontWeight: 500, color: '#ffeaed', whiteSpace: 'nowrap' }}>
+                                    {tech.name}
+                                  </span>
+                                </div>
+                              ))}
+                            </div>
+                          </div>
+                        );
+                      })}
+                    </div>
+                  </div>
+
                 </div>
               );
             })()}

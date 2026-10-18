@@ -653,6 +653,99 @@ body::before {
   }
 }
 
+/* =========================================================================
+   SKILLS BENTO GRID & DIVERSIFIED LAYOUT
+   ========================================================================= */
+
+.skill-bento-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+@media (min-width: 1024px) {
+  .skill-bento-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.skill-bento-card {
+  position: relative;
+  overflow: hidden;
+  padding: 22px 24px;
+  display: flex;
+  flex-direction: column;
+  justifyContent: space-between;
+  min-height: 160px;
+  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.skill-bento-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(230, 57, 86, 0.45);
+  box-shadow: 0 16px 36px -8px rgba(0, 0, 0, 0.85), 0 0 24px rgba(230, 57, 86, 0.25);
+}
+
+.skill-icon-wrap {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(244, 194, 194, 0.16);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.skill-bento-card:hover .skill-icon-wrap,
+.skill-compact-pill:hover .skill-icon-wrap {
+  background: rgba(230, 57, 86, 0.15);
+  border-color: rgba(230, 57, 86, 0.5);
+  box-shadow: 0 0 18px rgba(230, 57, 86, 0.35);
+  transform: scale(1.08);
+}
+
+.skill-icon-wrap img,
+.skill-icon-wrap svg {
+  transition: filter 0.3s ease, transform 0.3s ease;
+}
+
+.skill-bento-card:hover .skill-icon-wrap img,
+.skill-compact-pill:hover .skill-icon-wrap img {
+  filter: drop-shadow(0 0 8px rgba(255, 77, 109, 0.65)) brightness(1.15) !important;
+}
+
+.skill-bento-card:hover .skill-icon-wrap svg,
+.skill-compact-pill:hover .skill-icon-wrap svg {
+  filter: drop-shadow(0 0 8px rgba(255, 77, 109, 0.65)) !important;
+}
+
+.skill-compact-pill {
+  padding: 8px 14px;
+  border-radius: 12px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.03) 0%, rgba(20, 5, 8, 0.6) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: default;
+  user-select: none;
+}
+
+.skill-compact-pill:hover {
+  background: linear-gradient(135deg, rgba(230, 57, 86, 0.16) 0%, rgba(35, 10, 16, 0.7) 100%);
+  border-color: rgba(230, 57, 86, 0.4);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px -4px rgba(0, 0, 0, 0.7), 0 0 14px rgba(230, 57, 86, 0.2);
+}
+
+
 
 
 
