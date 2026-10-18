@@ -144,7 +144,7 @@ export const portfolioData = {
       description: "A lightweight web app for recording, transforming, and releasing memories. Built with an interactive glassmorphic UI that allows users to express thoughts, seed good memories with photos, and store data locally in SQLite.",
       tags: ["HTML/CSS", "JavaScript", "SQLite", "Glassmorphism"],
       github: "https://github.com/Asa790/overwrite-app",
-      demo: "https://github.com/Asa790/overwrite-app",
+      demo: "https://overwrite-app.onrender.com",
       highlights: ["Glassmorphism aesthetic UI", "Local SQLite database persistence", "Interactive emotional memory releasing flow"],
       featured: true
     },
