@@ -503,12 +503,30 @@ export default function App() {
             </div>
 
             <div style={{ position: 'relative' }}>
+              {/* Atmospheric Mesh Glow Blob Behind Hero Card */}
+              <div style={{
+                position: 'absolute',
+                top: '50%',
+                left: '50%',
+                transform: 'translate(-50%, -50%)',
+                width: '620px',
+                height: '620px',
+                borderRadius: '50%',
+                background: 'radial-gradient(circle, rgba(230, 57, 86, 0.22) 0%, rgba(168, 28, 51, 0.12) 45%, transparent 70%)',
+                filter: 'blur(75px)',
+                pointerEvents: 'none',
+                zIndex: 0
+              }} />
+
               <div className="glass-card hud-panel" style={{ 
                 padding: '30px', 
                 position: 'relative', 
                 overflow: 'hidden',
-                background: 'linear-gradient(145deg, rgba(38, 12, 18, 0.88) 0%, rgba(18, 5, 8, 0.96) 100%)',
-                border: '1px solid rgba(230, 57, 86, 0.35)'
+                background: 'linear-gradient(145deg, rgba(255, 255, 255, 0.04) 0%, rgba(35, 10, 16, 0.6) 35%, rgba(12, 3, 6, 0.85) 100%)',
+                border: '1px solid rgba(255, 255, 255, 0.09)',
+                borderTop: '1px solid rgba(255, 255, 255, 0.22)',
+                borderLeft: '1px solid rgba(244, 194, 194, 0.16)',
+                zIndex: 1
               }}>
                 <div className="hud-corner-tl" />
                 <div className="hud-corner-tr" />
@@ -864,8 +882,35 @@ export default function App() {
             </div>
           </div>
 
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '28px' }}>
-            {filteredProjects.map((proj) => {
+          <div style={{ position: 'relative' }}>
+            {/* Organic Atmospheric Mesh Glow Blobs Behind Project Cards */}
+            <div style={{
+              position: 'absolute',
+              top: '15%',
+              right: '-80px',
+              width: '650px',
+              height: '650px',
+              borderRadius: '50%',
+              background: 'radial-gradient(circle, rgba(230, 57, 86, 0.18) 0%, rgba(168, 28, 51, 0.08) 50%, transparent 70%)',
+              filter: 'blur(80px)',
+              pointerEvents: 'none',
+              zIndex: 0
+            }} />
+            <div style={{
+              position: 'absolute',
+              bottom: '10%',
+              left: '-100px',
+              width: '580px',
+              height: '580px',
+              borderRadius: '50%',
+              background: 'radial-gradient(circle, rgba(168, 28, 51, 0.16) 0%, rgba(90, 12, 26, 0.08) 50%, transparent 70%)',
+              filter: 'blur(80px)',
+              pointerEvents: 'none',
+              zIndex: 0
+            }} />
+
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '28px', position: 'relative', zIndex: 1 }}>
+              {filteredProjects.map((proj) => {
               const hasImages = proj.images && proj.images.length > 0;
 
               if (!hasImages) {
@@ -1129,6 +1174,7 @@ export default function App() {
                 </div>
               );
             })}
+            </div>
           </div>
 
         </div>
@@ -1372,9 +1418,11 @@ export default function App() {
           <div className="glass-card" style={{ 
             maxWidth: '900px', 
             margin: '40px auto 0', 
-            padding: '28px', 
-            background: 'linear-gradient(135deg, rgba(35, 10, 16, 0.9), rgba(15, 4, 7, 0.95))',
-            border: '1px solid rgba(244, 194, 194, 0.25)'
+            padding: '28px',
+            background: 'linear-gradient(145deg, rgba(255, 255, 255, 0.03) 0%, rgba(35, 10, 16, 0.55) 35%, rgba(12, 3, 6, 0.82) 100%)',
+            border: '1px solid rgba(255, 255, 255, 0.08)',
+            borderTop: '1px solid rgba(255, 255, 255, 0.2)',
+            borderLeft: '1px solid rgba(244, 194, 194, 0.14)'
           }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: education.certifications ? '24px' : '0' }}>
               <div style={{ 
@@ -1507,7 +1555,7 @@ export default function App() {
                               {cert.title} &bull; Click to view full certificate
                             </span>
                             <span style={{ fontSize: '0.72rem', color: 'var(--rose-gold)' }}>
-                              IBM CC0101EN
+                              {cert.courseCode ? `IBM ${cert.courseCode}` : 'IBM Credential'}
                             </span>
                           </div>
                         </div>
