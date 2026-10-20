@@ -77,7 +77,8 @@ const techLogos = {
   katalon: "https://upload.wikimedia.org/wikipedia/commons/e/e0/Katalon_Studio_logo.svg",
   expo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/expo/expo-original.svg",
   androidstudio: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/androidstudio/androidstudio-original.svg",
-  selenium: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/selenium/selenium-original.svg"
+  selenium: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/selenium/selenium-original.svg",
+  flutter: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg"
 };
 
 const TechLogo = ({ name, size = 22 }) => {

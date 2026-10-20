@@ -27,6 +27,7 @@ export const portfolioData = {
       { name: "TypeScript", icon: "typescript", category: "Programming Languages" },
       { name: "React", icon: "react", category: "Web & Frontend" },
       { name: "React Native", icon: "reactnative", category: "Web & Frontend" },
+      { name: "Flutter", icon: "flutter", category: "Web & Frontend" },
       { name: "Expo Go", icon: "expo", category: "Web & Frontend" },
       { name: "HTML5 / CSS3", icon: "html5", category: "Web & Frontend" },
       { name: "FastAPI", icon: "fastapi", category: "Backend & API" },
