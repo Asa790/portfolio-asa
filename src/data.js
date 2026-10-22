@@ -81,7 +81,7 @@ export const portfolioData = {
       id: "asa-essentials",
       title: "Asa's Essentials 🌸 Thoughtful Productivity Sanctuary",
       category: "Personal Gift & Web Utility",
-      description: "Conceived as a digital gift for friends and community — a comforting, vintage botanical stationery workspace designed to lighten daily tasks. Features private client-side task & calendar vaults, a nostalgic ribbon filmstrip photobooth, customizable focus ambiances, and an integrated high-performance media converter.",
+      description: "A digital sanctuary gift designed as a comforting vintage botanical desk to lighten daily tasks. Features private local vaults, a nostalgic ribbon photobooth, focus ambiances, and an integrated media converter.",
       tags: ["Node.js", "Express", "Sharp", "JavaScript", "Digital Gift", "Creative Utility"],
       github: "https://github.com/Asa790/asa-essentials",
       demo: "https://asa-essentials-1.onrender.com",
