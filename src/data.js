@@ -78,6 +78,25 @@ export const portfolioData = {
 
   projects: [
     {
+      id: "asa-essentials",
+      title: "Asa's Essentials 🌸 Thoughtful Productivity Sanctuary",
+      category: "Personal Gift & Web Utility",
+      description: "Conceived as a digital gift for friends and community — a comforting, vintage botanical stationery workspace designed to lighten daily tasks. Features private client-side task & calendar vaults, a nostalgic ribbon filmstrip photobooth, customizable focus ambiances, and an integrated high-performance media converter.",
+      tags: ["Node.js", "Express", "Sharp", "JavaScript", "Digital Gift", "Creative Utility"],
+      github: "https://github.com/Asa790/asa-essentials",
+      demo: "https://asa-essentials-1.onrender.com",
+      highlights: [
+        "Crafted as a digital sanctuary gift with warm linen & tactile coquette desk aesthetics",
+        "100% private per-device local storage for daily tasks, calendar & personal notes",
+        "Interactive 4-slot ribbon photobooth & custom ambient soundscapes",
+        "Full-fledged Sharp media processing engine with batch conversion & compression stats"
+      ],
+      images: [
+        "/projects/asa-essentials-preview.png"
+      ],
+      featured: true
+    },
+    {
       id: "sharecare-prototype",
       title: "ShareCare Volunteering & Donation Mobile App",
       category: "Mobile App & Social Tech",
